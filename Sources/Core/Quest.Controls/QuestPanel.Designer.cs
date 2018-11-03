@@ -1,4 +1,6 @@
-﻿namespace QuestConstructorNS
+﻿using Quest.Controls.Properties;
+
+namespace Quest.Controls
 {
     partial class QuestPanel
     {
@@ -110,7 +112,7 @@
             this.btAddAlt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btAddAlt.FlatAppearance.BorderSize = 0;
             this.btAddAlt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAddAlt.Image = global::QuestConstructorNS.Properties.Resources.list_add;
+            this.btAddAlt.Image = Resources.list_add;
             this.btAddAlt.Location = new System.Drawing.Point(48, 60);
             this.btAddAlt.Name = "btAddAlt";
             this.btAddAlt.Size = new System.Drawing.Size(25, 25);
@@ -123,7 +125,7 @@
             this.btUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btUp.FlatAppearance.BorderSize = 0;
             this.btUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btUp.Image = global::QuestConstructorNS.Properties.Resources.icons8_sort_up_16;
+            this.btUp.Image = Resources.icons8_sort_up_16;
             this.btUp.Location = new System.Drawing.Point(565, 4);
             this.btUp.Name = "btUp";
             this.btUp.Size = new System.Drawing.Size(20, 20);
@@ -136,7 +138,7 @@
             this.btDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btDown.FlatAppearance.BorderSize = 0;
             this.btDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btDown.Image = global::QuestConstructorNS.Properties.Resources.icons8_sort_down_16;
+            this.btDown.Image = Resources.icons8_sort_down_16;
             this.btDown.Location = new System.Drawing.Point(592, 4);
             this.btDown.Name = "btDown";
             this.btDown.Size = new System.Drawing.Size(20, 20);
@@ -149,7 +151,7 @@
             this.btDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btDelete.FlatAppearance.BorderSize = 0;
             this.btDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btDelete.Image = global::QuestConstructorNS.Properties.Resources.icons8_delete_24;
+            this.btDelete.Image = Resources.icons8_delete_24;
             this.btDelete.Location = new System.Drawing.Point(616, 3);
             this.btDelete.Name = "btDelete";
             this.btDelete.Size = new System.Drawing.Size(24, 22);
@@ -159,7 +161,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::QuestConstructorNS.Properties.Resources.gnome_dialog_question;
+            this.pictureBox1.Image = Resources.gnome_dialog_question;
             this.pictureBox1.Location = new System.Drawing.Point(3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 32);

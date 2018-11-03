@@ -54,7 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\QuestCore\QuestCore.csproj">
+    <ProjectReference Include="..\..\Core\QuestCore\QuestCore.csproj">
       <Project>{441F42B4-D564-4171-BF64-9D52376D7F68}</Project>
       <Name>QuestCore</Name>
     </ProjectReference>

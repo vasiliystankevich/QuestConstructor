@@ -32,7 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\question1.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -48,24 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\AlternativePanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\AlternativePanel.Designer.cs">
-      <DependentUpon>AlternativePanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\ConditionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Controls\ConditionForm.Designer.cs">
-      <DependentUpon>ConditionForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\QuestPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\QuestPanel.Designer.cs">
-      <DependentUpon>QuestPanel.cs</DependentUpon>
-    </Compile>
     <Compile Include="ExceptionHandler.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -76,70 +59,15 @@
     <Compile Include="OpenFolderDialog.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Controls\AlternativePanel.resx">
-      <DependentUpon>AlternativePanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ConditionForm.resx">
-      <DependentUpon>ConditionForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\QuestPanel.resx">
-      <DependentUpon>QuestPanel.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\gnome_dialog_question.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-delete-24.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-sort-down-16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-sort-up-16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\list_add.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\done_square.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\down_alt.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\up_alt.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\close_square.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\QuestCore\QuestCore.csproj">
+    <ProjectReference Include="..\..\Core\QuestCore\QuestCore.csproj">
       <Project>{441f42b4-d564-4171-bf64-9d52376d7f68}</Project>
       <Name>QuestCore</Name>
     </ProjectReference>
@@ -148,15 +76,7 @@
       <Name>QuestInterview</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\check.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\csv_text %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\question1.ico" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

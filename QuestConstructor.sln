@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuestInterview", "Sources\U
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuestCore", "Sources\Core\QuestCore\QuestCore.csproj", "{441F42B4-D564-4171-BF64-9D52376D7F68}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quest.Controls", "Sources\Core\Quest.Controls\Quest.Controls.csproj", "{5EDBDB8C-6FD7-4DDB-88E8-EC5CE8958209}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{441F42B4-D564-4171-BF64-9D52376D7F68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{441F42B4-D564-4171-BF64-9D52376D7F68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{441F42B4-D564-4171-BF64-9D52376D7F68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EDBDB8C-6FD7-4DDB-88E8-EC5CE8958209}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EDBDB8C-6FD7-4DDB-88E8-EC5CE8958209}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EDBDB8C-6FD7-4DDB-88E8-EC5CE8958209}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EDBDB8C-6FD7-4DDB-88E8-EC5CE8958209}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +54,7 @@ Global
 		{62C63751-196E-416F-802D-A281AEAE398A} = {40446E05-1F60-4C5B-9919-60C6227D9164}
 		{2693933E-C04A-4AA7-A516-9638C94E98CB} = {40446E05-1F60-4C5B-9919-60C6227D9164}
 		{441F42B4-D564-4171-BF64-9D52376D7F68} = {8F3C66D1-20CC-41E5-B785-DD33DA155ECD}
+		{5EDBDB8C-6FD7-4DDB-88E8-EC5CE8958209} = {8F3C66D1-20CC-41E5-B785-DD33DA155ECD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {618EC64C-4EB6-412A-B06F-5E2ABF1AE976}

@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Windows.Forms;
+using QuestConstructorNS;
 using QuestCoreNS;
 
-namespace QuestConstructorNS
+namespace Quest.Controls
 {
     public partial class QuestPanel : UserControl
     {
         private Questionnaire questionnaire;
-        private Quest quest;
+        private QuestCoreNS.Quest quest;
         private int updating;
 
         public event Action QuestionnaireListChanged = delegate { };
@@ -21,7 +22,7 @@ namespace QuestConstructorNS
         /// <summary>
         /// Строим интерфейс
         /// </summary>
-        public void Build(Questionnaire questionnaire, Quest quest)
+        public void Build(Questionnaire questionnaire, QuestCoreNS.Quest quest)
         {
             this.questionnaire = questionnaire;
             this.quest = quest;

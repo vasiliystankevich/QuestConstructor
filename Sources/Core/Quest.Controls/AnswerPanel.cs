@@ -3,14 +3,14 @@ using System.Linq;
 using System.Windows.Forms;
 using QuestCoreNS;
 
-namespace QuestInterviewNS
+namespace Quest.Controls
 {
     /// <summary>
     /// Отображение вопроса и ответа
     /// </summary>
     public partial class AnswerPanel : UserControl
     {
-        private Quest quest;
+        private QuestCoreNS.Quest quest;
         private Answer answer;
         private InterviewManipulator interviewManipulator;
 
@@ -27,7 +27,7 @@ namespace QuestInterviewNS
         /// <summary>
         /// Построение интерфейса
         /// </summary>
-        public void Build(InterviewManipulator interviewManipulator, Quest quest, Answer answer, bool readOnly)
+        public void Build(InterviewManipulator interviewManipulator, QuestCoreNS.Quest quest, Answer answer, bool readOnly)
         {
             this.interviewManipulator = interviewManipulator;
             this.quest = quest;

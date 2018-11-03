@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace System
+namespace Quest.Controls
 {
     public class ControlHelper
     {

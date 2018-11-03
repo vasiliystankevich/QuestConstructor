@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Windows.Forms;
+using QuestConstructorNS;
 using QuestCoreNS;
 
-namespace QuestConstructorNS
+namespace Quest.Controls
 {
     public partial class AlternativePanel : UserControl
     {
-        private Quest quest;
+        private QuestCoreNS.Quest quest;
         private Alternative alt;
         private Questionnaire questionnaire;
         private int updating;
@@ -22,7 +23,7 @@ namespace QuestConstructorNS
         /// <summary>
         /// Строим интерфейс
         /// </summary>
-        public void Build(Questionnaire questionnaire, Quest quest, Alternative alt)
+        public void Build(Questionnaire questionnaire, QuestCoreNS.Quest quest, Alternative alt)
         {
             this.quest = quest;
             this.alt = alt;

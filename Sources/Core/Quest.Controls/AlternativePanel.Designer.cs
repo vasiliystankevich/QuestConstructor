@@ -1,4 +1,6 @@
-﻿namespace QuestConstructorNS
+﻿using Quest.Controls.Properties;
+
+namespace Quest.Controls
 {
     partial class AlternativePanel
     {
@@ -61,7 +63,7 @@
             this.btUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btUp.FlatAppearance.BorderSize = 0;
             this.btUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btUp.Image = global::QuestConstructorNS.Properties.Resources.up_alt;
+            this.btUp.Image = Resources.up_alt;
             this.btUp.Location = new System.Drawing.Point(522, 4);
             this.btUp.Margin = new System.Windows.Forms.Padding(0);
             this.btUp.Name = "btUp";
@@ -75,7 +77,7 @@
             this.btDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btDown.FlatAppearance.BorderSize = 0;
             this.btDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btDown.Image = global::QuestConstructorNS.Properties.Resources.down_alt;
+            this.btDown.Image = Resources.down_alt;
             this.btDown.Location = new System.Drawing.Point(544, 4);
             this.btDown.Margin = new System.Windows.Forms.Padding(0);
             this.btDown.Name = "btDown";
@@ -89,7 +91,7 @@
             this.btDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btDelete.FlatAppearance.BorderSize = 0;
             this.btDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btDelete.Image = global::QuestConstructorNS.Properties.Resources.close_square;
+            this.btDelete.Image = Resources.close_square;
             this.btDelete.Location = new System.Drawing.Point(567, 4);
             this.btDelete.Margin = new System.Windows.Forms.Padding(0);
             this.btDelete.Name = "btDelete";
@@ -100,7 +102,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::QuestConstructorNS.Properties.Resources.done_square;
+            this.pictureBox1.Image = Resources.done_square;
             this.pictureBox1.Location = new System.Drawing.Point(3, 7);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(16, 16);

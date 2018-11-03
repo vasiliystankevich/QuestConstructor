@@ -1,4 +1,6 @@
-﻿namespace QuestConstructorNS
+﻿using Quest.Controls.Properties;
+
+namespace QuestConstructorNS
 {
     partial class ConditionForm
     {
@@ -53,7 +55,7 @@
             // 
             // btOk
             // 
-            this.btOk.Image = global::QuestConstructorNS.Properties.Resources.check;
+            this.btOk.Image = Resources.check;
             this.btOk.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btOk.Location = new System.Drawing.Point(352, 169);
             this.btOk.Name = "btOk";
