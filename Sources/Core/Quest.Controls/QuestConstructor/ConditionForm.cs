@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using QuestCore;
 
-namespace QuestConstructorNS
+namespace Quest.Controls.QuestConstructor
 {
     public partial class ConditionForm : Form
     {

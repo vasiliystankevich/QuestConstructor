@@ -1,6 +1,6 @@
 ﻿using Quest.Controls.Properties;
 
-namespace QuestConstructorNS
+namespace Quest.Controls.QuestConstructor
 {
     partial class ConditionForm
     {

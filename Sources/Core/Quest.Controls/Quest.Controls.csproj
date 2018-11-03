@@ -57,10 +57,10 @@
     <Compile Include="QuestInterview\AnswerPanel.Designer.cs">
       <DependentUpon>AnswerPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConditionForm.cs">
+    <Compile Include="QuestConstructor\ConditionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConditionForm.Designer.cs">
+    <Compile Include="QuestConstructor\ConditionForm.Designer.cs">
       <DependentUpon>ConditionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ControlHelper.cs" />
@@ -107,7 +107,7 @@
     <EmbeddedResource Include="QuestInterview\AnswerPanel.resx">
       <DependentUpon>AnswerPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConditionForm.resx">
+    <EmbeddedResource Include="QuestConstructor\ConditionForm.resx">
       <DependentUpon>ConditionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
