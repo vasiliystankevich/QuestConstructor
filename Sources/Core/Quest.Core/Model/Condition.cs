@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Quest.Core
+namespace Quest.Core.Model
 {
     /// <summary>
     /// Условие, которое может возвращать true или false в зависимости от ответов в Anketa

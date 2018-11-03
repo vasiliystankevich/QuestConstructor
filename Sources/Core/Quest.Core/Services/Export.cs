@@ -2,8 +2,9 @@
 using System.IO;
 using System.Linq;
 using System.Text;
+using Quest.Core.Model;
 
-namespace Quest.Core
+namespace Quest.Core.Services
 {
     /// <summary>
     /// Экспорт анкет во внешние форматы

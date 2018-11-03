@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using Quest.Core.Model;
 
-namespace Quest.Core
+namespace Quest.Core.Services
 {
     /// <summary>
     /// Проверяет корректность опросника.

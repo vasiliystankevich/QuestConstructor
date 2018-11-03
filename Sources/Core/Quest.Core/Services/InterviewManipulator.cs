@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Quest.Core.Model;
 
-namespace Quest.Core
+namespace Quest.Core.Services
 {
     /// <summary>
     /// Функционал для Interview

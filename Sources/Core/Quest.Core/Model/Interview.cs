@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 
-namespace Quest.Core
+namespace Quest.Core.Model
 {
     /// <summary>
     /// Процесс прохождения интервью
     /// </summary>
     public class Interview
     {
-        internal Questionnaire questionnaire { get; private set; }
-        internal Anketa anketa { get; private set; }
+        internal Questionnaire questionnaire { get; }
+        internal Anketa anketa { get; }
 
         /// <summary>
         /// Ответы, уже данные респондентом

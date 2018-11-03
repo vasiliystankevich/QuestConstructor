@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace Quest.Core.Helpers
+namespace Quest.Core
 {
     /// <summary>
     /// Сохранение и чтение объектов в/из файла

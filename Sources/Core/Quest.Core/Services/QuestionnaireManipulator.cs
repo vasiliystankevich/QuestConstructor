@@ -1,6 +1,8 @@
 ﻿using System.Linq;
+using Quest.Core.Helpers;
+using Quest.Core.Model;
 
-namespace Quest.Core
+namespace Quest.Core.Services
 {
     /// <summary>
     /// Производит манипуляции с опросником
@@ -12,7 +14,7 @@ namespace Quest.Core
         /// <summary>
         /// Добавить новый вопрос
         /// </summary>
-        public global::Quest.Core.Quest AddNewQuest(Questionnaire questionnaire)
+        public Model.Quest AddNewQuest(Questionnaire questionnaire)
         {
             //подбираем уникальное имя вопроса
             var counter = 1;
@@ -24,7 +26,7 @@ namespace Quest.Core
                 name = DefaultQuestPrefix + counter;
             }
             //
-            var quest = new global::Quest.Core.Quest() {Id = name, Title = "Текст вопроса"};
+            var quest = new Model.Quest {Id = name, Title = "Текст вопроса"};
             questionnaire.Add(quest);
             return quest;
         }
@@ -32,7 +34,7 @@ namespace Quest.Core
         /// <summary>
         /// Удалить вопрос
         /// </summary>
-        public void RemoveQuest(Questionnaire questionnaire, global::Quest.Core.Quest quest)
+        public void RemoveQuest(Questionnaire questionnaire, Model.Quest quest)
         {
             questionnaire.Remove(quest);
         }
@@ -40,7 +42,7 @@ namespace Quest.Core
         /// <summary>
         /// Перемещение вопроса
         /// </summary>
-        public void MoveQuest(Questionnaire questionnaire, global::Quest.Core.Quest quest, int dir)
+        public void MoveQuest(Questionnaire questionnaire, Model.Quest quest, int dir)
         {
             ListHelper.MoveElement(questionnaire, quest, dir);
         }

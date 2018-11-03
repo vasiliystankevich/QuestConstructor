@@ -5,6 +5,9 @@ using System.Windows.Forms;
 using Quest.Controls;
 using Quest.Controls.QuestConstructor;
 using Quest.Core;
+using Quest.Core.Helpers;
+using Quest.Core.Model;
+using Quest.Core.Services;
 
 namespace Quest.Constructor
 {

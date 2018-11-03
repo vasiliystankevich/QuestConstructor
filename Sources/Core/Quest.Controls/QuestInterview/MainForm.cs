@@ -2,6 +2,9 @@
 using System.Linq;
 using System.Windows.Forms;
 using Quest.Core;
+using Quest.Core.Helpers;
+using Quest.Core.Model;
+using Quest.Core.Services;
 
 namespace Quest.Controls.QuestInterview
 {

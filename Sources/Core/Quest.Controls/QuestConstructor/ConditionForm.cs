@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using Quest.Core;
+using Quest.Core.Model;
+using Quest.Core.Services;
 
 namespace Quest.Controls.QuestConstructor
 {

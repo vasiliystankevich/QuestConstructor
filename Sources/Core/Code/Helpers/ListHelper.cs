@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Quest.Core.Helpers
+namespace Quest.Core
 {
     static class ListHelper
     {        

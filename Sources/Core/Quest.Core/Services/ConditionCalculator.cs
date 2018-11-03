@@ -2,8 +2,9 @@
 using System.Data;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Quest.Core.Model;
 
-namespace Quest.Core
+namespace Quest.Core.Services
 {
     /// <summary>
     /// Вычисляет условия

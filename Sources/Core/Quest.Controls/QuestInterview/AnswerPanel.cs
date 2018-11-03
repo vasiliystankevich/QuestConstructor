@@ -2,6 +2,8 @@
 using System.Linq;
 using System.Windows.Forms;
 using Quest.Core;
+using Quest.Core.Model;
+using Quest.Core.Services;
 
 namespace Quest.Controls.QuestInterview
 {
@@ -10,7 +12,7 @@ namespace Quest.Controls.QuestInterview
     /// </summary>
     public partial class AnswerPanel : UserControl
     {
-        private Core.Quest quest;
+        private Core.Model.Quest quest;
         private Answer answer;
         private InterviewManipulator interviewManipulator;
 
@@ -27,7 +29,7 @@ namespace Quest.Controls.QuestInterview
         /// <summary>
         /// Построение интерфейса
         /// </summary>
-        public void Build(InterviewManipulator interviewManipulator, Core.Quest quest, Answer answer, bool readOnly)
+        public void Build(InterviewManipulator interviewManipulator, Core.Model.Quest quest, Answer answer, bool readOnly)
         {
             this.interviewManipulator = interviewManipulator;
             this.quest = quest;

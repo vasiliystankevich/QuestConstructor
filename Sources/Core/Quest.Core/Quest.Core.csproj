@@ -42,22 +42,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Anketa.cs" />
     <Compile Include="Helpers\ListHelper.cs" />
+    <Compile Include="Helpers\SaverLoader.cs" />
+    <Compile Include="Model\Anketa.cs" />
+    <Compile Include="Model\Answer.cs" />
     <Compile Include="Model\Condition.cs" />
     <Compile Include="Model\Interview.cs" />
-    <Compile Include="Services\Export.cs" />
-    <Compile Include="Services\ConditionCalculator.cs" />
-    <Compile Include="Services\InterviewManipulator.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\Questionnaire.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ConditionCalculator.cs" />
+    <Compile Include="Services\Export.cs" />
+    <Compile Include="Services\InterviewManipulator.cs" />
     <Compile Include="Services\QuestionnaireManipulator.cs" />
     <Compile Include="Services\QuestionnaireValidator.cs" />
     <Compile Include="Services\QuestManipulator.cs" />
-    <Compile Include="Helpers\SaverLoader.cs" />
     <Compile Include="UI\ExceptionHandler.cs" />
     <Compile Include="UI\IconForAllForm.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
