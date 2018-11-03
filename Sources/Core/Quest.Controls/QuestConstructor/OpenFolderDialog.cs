@@ -3,17 +3,13 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace Quest.Controls
+namespace Quest.Controls.QuestConstructor
 {
     public class OpenFolderDialog
     {
         public DialogResult ShowDialog(IWin32Window owner)
         {
-
-            if (Environment.OSVersion.Version.Major >= 6)
-                return ShowVistaDialog(owner);
-            else
-                return ShowLegacyDialog(owner);
+            return Environment.OSVersion.Version.Major >= 6 ? ShowVistaDialog(owner) : ShowLegacyDialog(owner);
         }
 
         private DialogResult ShowVistaDialog(IWin32Window owner)
