@@ -1,6 +1,6 @@
 using System.Linq;
 
-namespace QuestCoreNS
+namespace QuestCore
 {
     /// <summary>
     /// Производит манипуляции с вопросом

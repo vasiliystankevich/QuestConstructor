@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace QuestCoreNS
+namespace QuestCore
 {
     /// <summary>
     /// Условие, которое может возвращать true или false в зависимости от ответов в Anketa

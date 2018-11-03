@@ -7,7 +7,7 @@
     <ProjectGuid>{441F42B4-D564-4171-BF64-9D52376D7F68}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>QuestCoreNS</RootNamespace>
+    <RootNamespace>QuestCore</RootNamespace>
     <AssemblyName>QuestCore</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

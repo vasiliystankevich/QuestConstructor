@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
-using QuestCoreNS;
+using QuestCore;
 
 namespace Quest.Controls
 {
@@ -10,7 +10,7 @@ namespace Quest.Controls
     /// </summary>
     public partial class AnswerPanel : UserControl
     {
-        private QuestCoreNS.Quest quest;
+        private QuestCore.Quest quest;
         private Answer answer;
         private InterviewManipulator interviewManipulator;
 
@@ -27,7 +27,7 @@ namespace Quest.Controls
         /// <summary>
         /// Построение интерфейса
         /// </summary>
-        public void Build(InterviewManipulator interviewManipulator, QuestCoreNS.Quest quest, Answer answer, bool readOnly)
+        public void Build(InterviewManipulator interviewManipulator, QuestCore.Quest quest, Answer answer, bool readOnly)
         {
             this.interviewManipulator = interviewManipulator;
             this.quest = quest;

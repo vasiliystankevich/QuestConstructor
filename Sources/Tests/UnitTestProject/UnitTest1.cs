@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using QuestCoreNS;
+using QuestCore;
 
 namespace UnitTestProject
 {

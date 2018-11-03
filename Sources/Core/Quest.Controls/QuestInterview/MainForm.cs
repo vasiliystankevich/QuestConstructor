@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
-using QuestCoreNS;
+using QuestCore;
 
 namespace Quest.Controls.QuestInterview
 {

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using QuestCoreNS;
+using QuestCore;
 
 namespace QuestConstructorNS
 {
