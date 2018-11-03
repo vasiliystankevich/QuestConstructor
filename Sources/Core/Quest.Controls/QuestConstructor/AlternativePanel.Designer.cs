@@ -4,15 +4,6 @@ namespace Quest.Controls.QuestConstructor
 {
     partial class AlternativePanel
     {
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
         private void InitializeComponent()
         {
             this.tbId = new System.Windows.Forms.TextBox();
@@ -128,6 +119,15 @@ namespace Quest.Controls.QuestConstructor
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
         }
 
         private System.ComponentModel.IContainer components = null;

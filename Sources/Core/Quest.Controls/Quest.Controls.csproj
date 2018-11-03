@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NativeMethods.cs" />
     <Compile Include="QuestConstructor\AlternativePanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
