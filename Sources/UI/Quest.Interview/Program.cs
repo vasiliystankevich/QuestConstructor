@@ -3,7 +3,7 @@ using System.Reflection;
 using System.Windows.Forms;
 using Quest.Core.UI;
 
-namespace QuestInterviewNS
+namespace Quest.Interview
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace QuestInterviewNS
             ExceptionHandler.Init();
 
             //иконка для всех форм
-            typeof(Form).GetField("defaultIcon", BindingFlags.NonPublic | BindingFlags.Static).SetValue(null, Quest.Controls.Properties.Resources.question1);
+            typeof(Form).GetField("defaultIcon", BindingFlags.NonPublic | BindingFlags.Static).SetValue(null, Controls.Properties.Resources.question1);
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
