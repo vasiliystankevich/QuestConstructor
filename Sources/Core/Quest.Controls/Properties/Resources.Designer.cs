@@ -22,7 +22,7 @@ namespace Quest.Controls.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -183,7 +183,7 @@ namespace Quest.Controls.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
         /// </summary>
-        internal static System.Drawing.Icon question1 {
+        public static System.Drawing.Icon question1 {
             get {
                 object obj = ResourceManager.GetObject("question1", resourceCulture);
                 return ((System.Drawing.Icon)(obj));

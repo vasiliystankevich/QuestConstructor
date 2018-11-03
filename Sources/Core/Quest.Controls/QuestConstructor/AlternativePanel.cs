@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using Quest.Core;
-using QuestCore;
 
 namespace Quest.Controls.QuestConstructor
 {

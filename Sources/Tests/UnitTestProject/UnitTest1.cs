@@ -1,8 +1,5 @@
-﻿using System;
-using System.Diagnostics;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Quest.Core;
-using QuestCore;
 
 namespace UnitTestProject
 {
@@ -15,7 +12,7 @@ namespace UnitTestProject
             //создаем опросник
             var questionnaire = new Questionnaire();
             //создаем вопрос
-            var quest = new Quest { Id = "A1", Title = "Заголовок вопроса" };
+            var quest = new Quest.Core.Quest { Id = "A1", Title = "Заголовок вопроса" };
             //создаем альтренативу
             var alt = new Alternative {Code = 1, Title = "Вариант1"};
             //добавляем альтернативу в вопрос
@@ -61,8 +58,8 @@ namespace UnitTestProject
             //создаем опросник
             var questionnaire = new Questionnaire();
             //создаем вопросы с одинаковыми именами
-            questionnaire.Add(new Quest { Id = "A1", Title = "Заголовок вопроса" });
-            questionnaire.Add(new Quest { Id = "A1", Title = "Заголовок вопроса" });
+            questionnaire.Add(new Quest.Core.Quest { Id = "A1", Title = "Заголовок вопроса" });
+            questionnaire.Add(new Quest.Core.Quest { Id = "A1", Title = "Заголовок вопроса" });
 
             //запускаем валидатор
             try
@@ -83,8 +80,8 @@ namespace UnitTestProject
             //создаем опросник
             var questionnaire = new Questionnaire();
             //создаем вопросы
-            questionnaire.Add(new Quest { Id = "A1"});
-            questionnaire.Add(new Quest { Id = "A2"});
+            questionnaire.Add(new Quest.Core.Quest { Id = "A1"});
+            questionnaire.Add(new Quest.Core.Quest { Id = "A2"});
 
             //создакем калькулятор
             var calc = new ConditionCalculator();
