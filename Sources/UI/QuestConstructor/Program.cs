@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using System.Windows.Forms;
-using QuestCore.UI;
+using Quest.Core.UI;
 
 namespace QuestConstructorNS
 {

@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Quest.Controls</RootNamespace>
     <AssemblyName>Quest.Controls</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -122,9 +122,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\QuestCore\QuestCore.csproj">
+    <ProjectReference Include="..\Quest.Core\Quest.Core.csproj">
       <Project>{441f42b4-d564-4171-bf64-9d52376d7f68}</Project>
-      <Name>QuestCore</Name>
+      <Name>Quest.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

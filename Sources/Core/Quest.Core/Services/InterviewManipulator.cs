@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace QuestCore
+namespace Quest.Core
 {
     /// <summary>
     /// Функционал для Interview

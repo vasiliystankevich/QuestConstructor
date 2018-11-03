@@ -1,6 +1,6 @@
 using System.Linq;
 
-namespace QuestCore
+namespace Quest.Core
 {
     /// <summary>
     /// Производит манипуляции с вопросом
@@ -10,7 +10,7 @@ namespace QuestCore
         /// <summary>
         /// Добавить новую альтернативу
         /// </summary>
-        public Alternative AddNewAlt(Quest quest)
+        public Alternative AddNewAlt(global::Quest.Core.Quest quest)
         {
             //подбираем уникальный код альтернативы
             var code = 1;
@@ -27,7 +27,7 @@ namespace QuestCore
         /// <summary>
         /// Удалить альтренативу
         /// </summary>
-        public void RemoveAlt(Quest quest, Alternative alt)
+        public void RemoveAlt(global::Quest.Core.Quest quest, Alternative alt)
         {
             quest.Remove(alt);
         }
@@ -35,7 +35,7 @@ namespace QuestCore
         /// <summary>
         /// Перемещение альтернативы
         /// </summary>
-        public void MoveAlt(Quest quest, Alternative alt, int dir)
+        public void MoveAlt(global::Quest.Core.Quest quest, Alternative alt, int dir)
         {
             ListHelper.MoveElement(quest, alt, dir);
         }

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using QuestCore;
 
-namespace QuestCore
+namespace Quest.Core
 {
     /// <summary>
     /// Процесс прохождения интервью

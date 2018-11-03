@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Windows.Forms;
 
-namespace QuestCore.UI
+namespace Quest.Core.UI
 {
     public static class ExceptionHandler
     {

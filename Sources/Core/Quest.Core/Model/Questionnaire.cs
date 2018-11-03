@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace QuestCore
+namespace Quest.Core
 {
     /// <summary>
     /// Опросник.

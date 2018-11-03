@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace QuestCore
+namespace Quest.Core
 {
     /// <summary>
     /// Экспорт анкет во внешние форматы

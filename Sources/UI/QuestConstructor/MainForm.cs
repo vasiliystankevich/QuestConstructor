@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Quest.Controls;
 using Quest.Controls.QuestConstructor;
+using Quest.Core;
 using QuestCore;
 
 namespace QuestConstructorNS

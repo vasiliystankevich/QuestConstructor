@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace QuestCore
+namespace Quest.Core
 {
     /// <summary>
     /// Условие, которое может возвращать true или false в зависимости от ответов в Anketa

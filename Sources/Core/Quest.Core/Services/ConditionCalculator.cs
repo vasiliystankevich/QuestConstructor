@@ -3,7 +3,7 @@ using System.Data;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace QuestCore
+namespace Quest.Core
 {
     /// <summary>
     /// Вычисляет условия
