@@ -67,13 +67,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\Quest.Controls\Quest.Controls.csproj">
+      <Project>{5edbdb8c-6fd7-4ddb-88e8-ec5ce8958209}</Project>
+      <Name>Quest.Controls</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Core\QuestCore\QuestCore.csproj">
       <Project>{441f42b4-d564-4171-bf64-9d52376d7f68}</Project>
       <Name>QuestCore</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\QuestInterview\QuestInterview.csproj">
-      <Project>{2693933e-c04a-4aa7-a516-9638c94e98cb}</Project>
-      <Name>QuestInterview</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

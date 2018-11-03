@@ -121,7 +121,8 @@
             // btExportCSV
             // 
             this.btExportCSV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btExportCSV.Image = global::QuestConstructorNS.Properties.Resources.csv_text__1_;
+            
+            this.btExportCSV.Image = Quest.Controls.Properties.Resources.csv_text__1_;
             this.btExportCSV.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btExportCSV.Name = "btExportCSV";
             this.btExportCSV.Size = new System.Drawing.Size(24, 24);
