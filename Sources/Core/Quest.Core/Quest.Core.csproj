@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -55,6 +56,7 @@
     <Compile Include="Services\QuestManipulator.cs" />
     <Compile Include="Helpers\SaverLoader.cs" />
     <Compile Include="UI\ExceptionHandler.cs" />
+    <Compile Include="UI\IconForAllForm.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

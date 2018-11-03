@@ -14,9 +14,7 @@ namespace Quest.Constructor
         static void Main()
         {
             ExceptionHandler.Init();
-
-            //иконка для всех форм
-            typeof(Form).GetField("defaultIcon", BindingFlags.NonPublic | BindingFlags.Static).SetValue(null, Quest.Controls.Properties.Resources.question1);
+            IconForAllForm.SetIcon(Controls.Properties.Resources.question1);
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

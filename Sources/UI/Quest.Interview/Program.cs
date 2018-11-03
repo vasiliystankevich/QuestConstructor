@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Reflection;
 using System.Windows.Forms;
 using Quest.Core.UI;
 
@@ -14,13 +13,11 @@ namespace Quest.Interview
         static void Main()
         {
             ExceptionHandler.Init();
-
-            //иконка для всех форм
-            typeof(Form).GetField("defaultIcon", BindingFlags.NonPublic | BindingFlags.Static).SetValue(null, Controls.Properties.Resources.question1);
+            IconForAllForm.SetIcon(Controls.Properties.Resources.question1);
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Quest.Controls.QuestInterview.MainForm());
+            Application.Run(new Controls.QuestInterview.MainForm());
         }
     }
 }
