@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using System.Windows.Forms;
+using QuestCore.UI;
 
 namespace QuestInterviewNS
 {

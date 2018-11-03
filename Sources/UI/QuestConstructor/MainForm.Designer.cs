@@ -56,7 +56,7 @@
             this.btExportCSV});
             this.tsMain.Location = new System.Drawing.Point(0, 0);
             this.tsMain.Name = "tsMain";
-            this.tsMain.Size = new System.Drawing.Size(763, 27);
+            this.tsMain.Size = new System.Drawing.Size(572, 27);
             this.tsMain.TabIndex = 0;
             this.tsMain.Text = "toolStrip1";
             // 
@@ -121,8 +121,7 @@
             // btExportCSV
             // 
             this.btExportCSV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            
-            this.btExportCSV.Image = Quest.Controls.Properties.Resources.csv_text__1_;
+            this.btExportCSV.Image = ((System.Drawing.Image)(resources.GetObject("btExportCSV.Image")));
             this.btExportCSV.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btExportCSV.Name = "btExportCSV";
             this.btExportCSV.Size = new System.Drawing.Size(24, 24);
@@ -134,19 +133,22 @@
             this.pnMain.AutoScroll = true;
             this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnMain.Location = new System.Drawing.Point(0, 27);
+            this.pnMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnMain.Name = "pnMain";
-            this.pnMain.Padding = new System.Windows.Forms.Padding(3);
-            this.pnMain.Size = new System.Drawing.Size(763, 405);
+            this.pnMain.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnMain.Size = new System.Drawing.Size(572, 324);
             this.pnMain.TabIndex = 1;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(763, 432);
+            this.ClientSize = new System.Drawing.Size(572, 351);
             this.Controls.Add(this.pnMain);
             this.Controls.Add(this.tsMain);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quest Constructor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.tsMain.ResumeLayout(false);
