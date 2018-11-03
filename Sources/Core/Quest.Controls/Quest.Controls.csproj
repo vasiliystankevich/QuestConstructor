@@ -51,10 +51,10 @@
     <Compile Include="AlternativePanel.Designer.cs">
       <DependentUpon>AlternativePanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="AnswerPanel.cs">
+    <Compile Include="QuestInterview\AnswerPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AnswerPanel.Designer.cs">
+    <Compile Include="QuestInterview\AnswerPanel.Designer.cs">
       <DependentUpon>AnswerPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="ConditionForm.cs">
@@ -104,7 +104,7 @@
     <EmbeddedResource Include="AlternativePanel.resx">
       <DependentUpon>AlternativePanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AnswerPanel.resx">
+    <EmbeddedResource Include="QuestInterview\AnswerPanel.resx">
       <DependentUpon>AnswerPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConditionForm.resx">

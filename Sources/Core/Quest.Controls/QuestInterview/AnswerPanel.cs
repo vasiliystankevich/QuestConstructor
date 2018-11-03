@@ -3,7 +3,7 @@ using System.Linq;
 using System.Windows.Forms;
 using QuestCore;
 
-namespace Quest.Controls
+namespace Quest.Controls.QuestInterview
 {
     /// <summary>
     /// Отображение вопроса и ответа

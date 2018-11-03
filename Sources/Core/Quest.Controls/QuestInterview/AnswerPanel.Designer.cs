@@ -1,4 +1,4 @@
-﻿namespace Quest.Controls
+﻿namespace Quest.Controls.QuestInterview
 {
     partial class AnswerPanel
     {
@@ -57,7 +57,7 @@
             this.pnMain.AutoScroll = true;
             this.pnMain.AutoSize = true;
             this.pnMain.Location = new System.Drawing.Point(26, 26);
-            this.pnMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnMain.Margin = new System.Windows.Forms.Padding(2);
             this.pnMain.MaximumSize = new System.Drawing.Size(338, 812);
             this.pnMain.Name = "pnMain";
             this.pnMain.Size = new System.Drawing.Size(338, 0);
@@ -73,7 +73,7 @@
             this.tableLayoutPanel1.Controls.Add(this.lbQuestTitle, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.pnMain, 1, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 2);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -85,7 +85,7 @@
             // 
             this.pictureBox1.Image = global::Quest.Controls.Properties.Resources.question_alt;
             this.pictureBox1.Location = new System.Drawing.Point(2, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(20, 20);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -99,7 +99,7 @@
             this.AutoSize = true;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AnswerPanel";
             this.Size = new System.Drawing.Size(430, 91);
             this.tableLayoutPanel1.ResumeLayout(false);
