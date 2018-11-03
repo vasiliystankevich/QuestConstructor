@@ -4,9 +4,6 @@ using Quest.Core.Model;
 
 namespace Quest.Core.Services
 {
-    /// <summary>
-    /// Функционал для Interview
-    /// </summary>
     public class InterviewManipulator
     {
         private Interview interview;
@@ -16,42 +13,28 @@ namespace Quest.Core.Services
             this.interview = interview;
         }
 
-        /// <summary>
-        /// Переходим к следующему вопросу
-        /// </summary>
         public void GoToNextQuestion()
         {
-            if (interview.IsFinished) return;//интервью уже завершено
+            if (interview.IsFinished) return;
 
-            //получаем индекс текущего вопроса
             var currentQuestIndex = interview.CurrentAnswer == null ? -1 : interview.questionnaire.FindIndex(q => q.Id == interview.CurrentAnswer.QuestId);
 
-            //ищем следующий вопрос, у которго выполняется условие показа
             for (int i = currentQuestIndex + 1; i < interview.questionnaire.Count; i++)
             {
-                //получаем условие отображения вопроса
                 var condition = interview.questionnaire[i].Condition;
 
-                //условие выполняется?
                 var clalculator = new ConditionCalculator();
                 if (clalculator.Calculate(interview.anketa, condition))
                 {
-                    //нашли
                     var quest = interview.questionnaire[i];
-
-                    //добавляем текущий ответ в список отвеченных вопросов
                     if(interview.CurrentAnswer != null)
                         interview.PassedAnswers.Add(interview.CurrentAnswer);
-
-                    //создаем новый Answer для нового вопроса
                     interview.CurrentAnswer = new Answer { QuestId = quest.Id };
                     interview.anketa.Add(interview.CurrentAnswer);
-                    //
                     return;
                 }
             }
 
-            //нет следующего вопроса, анкета завершена
             if (interview.CurrentAnswer != null)
             {
                 interview.PassedAnswers.Add(interview.CurrentAnswer);
@@ -60,18 +43,13 @@ namespace Quest.Core.Services
             interview.IsFinished = true;
         }
 
-        /// <summary>
-        /// Получение списка альтренатив, разрешенных к показу, для текущего вопроса
-        /// </summary>
         public IEnumerable<Alternative> GetAllowedAlternatives()
         {
-            if (interview.IsFinished) yield break;//интервью уже завершено
-            if (interview.CurrentAnswer == null) yield break;//нет текущего вопроса
+            if (interview.IsFinished) yield break;
+            if (interview.CurrentAnswer == null) yield break;
 
-            //получаем текущий вопрос
             var quest = interview.questionnaire.First(q => q.Id == interview.CurrentAnswer.QuestId);
 
-            //перебираем альтернативы, проверяем условние показа, возвращаем те, которые разрешены к показу
             var clalculator = new ConditionCalculator();
             foreach (var alt in quest)
             if (clalculator.Calculate(interview.anketa, alt.Condition))

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Windows.Forms;
 using Quest.Controls;
 using Quest.Controls.QuestConstructor;
-using Quest.Core;
 using Quest.Core.Helpers;
 using Quest.Core.Model;
 using Quest.Core.Services;
@@ -13,7 +12,6 @@ namespace Quest.Constructor
 {
     public partial class MainForm : Form
     {
-        // Текущий опросник
         private Questionnaire questionnaire = new Questionnaire();
         private bool changed;
 
@@ -21,45 +19,35 @@ namespace Quest.Constructor
         {
             InitializeComponent();
 
-            //строим интерфейс
             Build();
         }
 
         private void Build()
         {
-            //создаем хелпер отрисовки, останавливаем отрисовку
             var helper = new ControlHelper(pnMain);
 
-            //очищаем центральную панель
             pnMain.Controls.Clear();
-            //создаем контролы для каждого вопроса
             foreach (var quest in questionnaire)
             {
-                //создаем usercontrol для вопроса
                 var pn = new QuestPanel();
-                //строим его
                 pn.Build(questionnaire, quest);
 
-                //подписываемся на события
                 pn.QuestionnaireListChanged += () =>
                 {
-                    changed = true;//выставлем флажок изменения
+                    changed = true;
                     Build();
                 };
                 
-                //перестриваем интерфейс, если изменился список вопросов
                 pn.Changed += () => 
                 {
-                    changed = true; //выставлем флажок изменения
+                    changed = true;
                     UpdateInterface();
                 };
 
-                pnMain.Controls.Add(pn);//добавляем на главную панель
+                pnMain.Controls.Add(pn);
             }
-            //обновляем интерфейс
             UpdateInterface();
 
-            //восстанавливаем отрисовку
             helper.ResumeDrawing();
         }
 
@@ -70,32 +58,23 @@ namespace Quest.Constructor
 
         private void LoadQuestionnaireFromFile(string filePath)
         {
-            //загружаем из файла
             questionnaire = SaverLoader.Load<Questionnaire>(filePath);
-            //сбрасываем флажок изменений
             changed = false;
-            //перестриваем интерфейс
             Build();
         }
 
         private void SaveQuestionnaireToFile(string filePath)
         {
-            //проверяем опросник
             new QuestionnaireValidator().Validate(questionnaire);
-            //сбрасываем флажок изменений
             changed = false;
-            //сохраняем в файл
             SaverLoader.Save(questionnaire, filePath);
-            //
             UpdateInterface();
         }
 
         private void RunQuestionnaire()
         {
-            //проверяем опросник
             new QuestionnaireValidator().Validate(questionnaire);
-            //запускаем интервью
-            new Quest.Controls.QuestInterview.MainForm(questionnaire).ShowDialog(this);
+            new Controls.QuestInterview.MainForm(questionnaire).ShowDialog(this);
         }
 
         private void btOpen_Click(object sender, EventArgs e)
@@ -124,11 +103,8 @@ namespace Quest.Constructor
 
         private void btAddQuest_Click(object sender, EventArgs e)
         {
-            //добавляем новый вопрос в опросник
             new QuestionnaireManipulator().AddNewQuest(questionnaire);
-            //выставлем флажок изменения
             changed = true;
-            //перестраиваем интерфейс
             Build();
         }
 
@@ -142,7 +118,6 @@ namespace Quest.Constructor
             var ofd = new OpenFolderDialog();
             if (ofd.ShowDialog(this) == DialogResult.OK)
             {
-                //получаем список анкет в выбранной папке
                 var anketas = Directory.GetFiles(ofd.Folder, "*.a").Select(path => SaverLoader.Load<Anketa>(path)).ToList();
                 if (anketas.Count == 0)
                 {
@@ -150,11 +125,9 @@ namespace Quest.Constructor
                     return;
                 }
 
-                //запрашиваем имя выходного csv файла
                 var sfd = new SaveFileDialog() {Filter = "CSV|*.csv"};
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
-                    //экспортируем
                     new Export().ExportToCSV(anketas, sfd.FileName);
                     MessageBox.Show("Экспортировано " + anketas.Count + " анкет");
                 }

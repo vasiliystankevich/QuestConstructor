@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using Quest.Core;
 using Quest.Core.Model;
 using Quest.Core.Services;
 
@@ -8,11 +7,6 @@ namespace Quest.Controls.QuestConstructor
 {
     public partial class ConditionForm : Form
     {
-        private Condition condition;
-        private Questionnaire questionnaire;
-
-        public event Action Changed = delegate { };
-
         public ConditionForm()
         {
             InitializeComponent();
@@ -30,7 +24,6 @@ namespace Quest.Controls.QuestConstructor
         {
             var expression = tbExpression.Text.Trim();
 
-            //проверяем корректность выражения
             try
             {
                 new ConditionCalculator().Check(questionnaire, expression);
@@ -40,12 +33,14 @@ namespace Quest.Controls.QuestConstructor
                 MessageBox.Show(ex.Message);
                 return;
             }
-            //обновляем доменный объект
             condition.Expression = expression;
-            //сигнализируем наверх о том, что объект поменялся
             Changed();
-            //закрываем окно
             DialogResult = DialogResult.OK;
         }
+
+        private Condition condition;
+        private Questionnaire questionnaire;
+
+        public event Action Changed = delegate { };
     }
 }

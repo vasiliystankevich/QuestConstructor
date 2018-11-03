@@ -1,34 +1,18 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
-using Quest.Core;
 using Quest.Core.Model;
 using Quest.Core.Services;
 
 namespace Quest.Controls.QuestInterview
 {
-    /// <summary>
-    /// Отображение вопроса и ответа
-    /// </summary>
     public partial class AnswerPanel : UserControl
     {
-        private Core.Model.Quest quest;
-        private Answer answer;
-        private InterviewManipulator interviewManipulator;
-
-        /// <summary>
-        /// Пользователь указал/изменил ответ
-        /// </summary>
-        public event Action Changed = delegate { };
-
         public AnswerPanel()
         {
             InitializeComponent();
         }
 
-        /// <summary>
-        /// Построение интерфейса
-        /// </summary>
         public void Build(InterviewManipulator interviewManipulator, Core.Model.Quest quest, Answer answer, bool readOnly)
         {
             this.interviewManipulator = interviewManipulator;
@@ -37,17 +21,14 @@ namespace Quest.Controls.QuestInterview
 
             lbQuestTitle.Text = quest.Title;
 
-            //очищаем панель альтернатив
             pnMain.Controls.Clear();
 
             if (readOnly)
             {
-                //строим ответы в режиме readonly
                 BuildReadOnlyAnswerInterface();
             }
             else
             { 
-                //строим альтернативы, в зависимости от типа вопроса
                 switch (quest.QuestType)
                 {
                     case QuestType.SingleAnswer: BuildSingleAnswerInterface(); break;
@@ -58,33 +39,28 @@ namespace Quest.Controls.QuestInterview
 
         private void BuildSingleAnswerInterface()
         {
-            //создаем комбобокс
             var cb = new ComboBox();
-            var alternatives = interviewManipulator.GetAllowedAlternatives().ToList();//получаем список разрешенных к показу альтернатив
-            cb.DataSource = alternatives;//отображаем список альтернатив
+            var alternatives = interviewManipulator.GetAllowedAlternatives().ToList();
+            cb.DataSource = alternatives;
             cb.ValueMember = "Code";
             cb.DisplayMember = "Title";
             cb.DropDownStyle = ComboBoxStyle.DropDownList;
             cb.Parent = pnMain;
             cb.SelectedValueChanged += (o, O) => OnValueSelected((int)cb.SelectedValue);//обрабатываем выбор
-            //имитируем выбор первой альтернативы
             if(alternatives.Count > 0)
                 OnValueSelected(alternatives[0].Code);
         }
 
         private void BuildOpenAnswerInterface()
         {
-            //создаем текстбокс
             var tb = new TextBox();
             tb.Parent = pnMain;
-            tb.TextChanged += (o, O) => OnValueSelected(tb.Text);//обрабатываем выбор
+            tb.TextChanged += (o, O) => OnValueSelected(tb.Text);
         }
 
         private void BuildReadOnlyAnswerInterface()
         {
-            //создаем лейбу
             var lb = new Label();
-            //получаем альтернативу
             var alt = quest.FirstOrDefault(a => a.Code == answer.AlternativeCode);
             lb.Text = alt?.Title + " " + answer.Text;
             lb.Parent = pnMain;
@@ -92,14 +68,21 @@ namespace Quest.Controls.QuestInterview
 
         private void OnValueSelected(int alternativeCode)
         {
-            answer.AlternativeCode = alternativeCode; //отправлем выбранное значение в доменный объект
-            Changed();//сигнализируем наверх, о том, что пользователь что-то выбрал
+            answer.AlternativeCode = alternativeCode; 
+            Changed();
         }
 
         private void OnValueSelected(string text)
         {
-            answer.Text = text; //отправлем выбранное значение в доменный объект
-            Changed();//сигнализируем наверх, о том, что пользователь что-то выбрал
+            answer.Text = text; 
+            Changed();
         }
+
+        private Core.Model.Quest quest;
+        private Answer answer;
+        private InterviewManipulator interviewManipulator;
+
+        public event Action Changed = delegate { };
+
     }
 }
