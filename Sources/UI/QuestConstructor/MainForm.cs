@@ -91,7 +91,7 @@ namespace QuestConstructorNS
             //проверяем опросник
             new QuestionnaireValidator().Validate(questionnaire);
             //запускаем интервью
-            new QuestInterviewNS.MainForm(questionnaire).ShowDialog(this);
+            new Quest.Controls.QuestInterview.MainForm(questionnaire).ShowDialog(this);
         }
 
         private void btOpen_Click(object sender, EventArgs e)

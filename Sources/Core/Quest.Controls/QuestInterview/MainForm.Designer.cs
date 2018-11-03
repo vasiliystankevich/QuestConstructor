@@ -1,4 +1,4 @@
-﻿namespace QuestInterviewNS
+﻿namespace Quest.Controls.QuestInterview
 {
     partial class MainForm
     {
@@ -47,7 +47,7 @@
             // 
             // btNext
             // 
-            this.btNext.Image = global::QuestInterviewNS.Properties.Resources.control_right;
+            this.btNext.Image = Quest.Controls.Properties.Resources.control_right;
             this.btNext.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btNext.Location = new System.Drawing.Point(3, 3);
             this.btNext.Name = "btNext";
