@@ -3,7 +3,7 @@ using System.Reflection;
 using System.Windows.Forms;
 using Quest.Core.UI;
 
-namespace QuestConstructorNS
+namespace QuestConstructor
 {
     static class Program
     {

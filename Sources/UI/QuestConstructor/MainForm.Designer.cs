@@ -1,4 +1,4 @@
-﻿namespace QuestConstructorNS
+﻿namespace QuestConstructor
 {
     partial class MainForm
     {

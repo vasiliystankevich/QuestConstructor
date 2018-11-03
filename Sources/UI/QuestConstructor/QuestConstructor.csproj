@@ -7,7 +7,7 @@
     <ProjectGuid>{62C63751-196E-416F-802D-A281AEAE398A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>QuestConstructorNS</RootNamespace>
+    <RootNamespace>QuestConstructor</RootNamespace>
     <AssemblyName>QuestConstructor</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
