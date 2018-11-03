@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using QuestConstructorNS;
 using QuestCore;
 
-namespace Quest.Controls
+namespace Quest.Controls.QuestConstructor
 {
     public partial class AlternativePanel : UserControl
     {

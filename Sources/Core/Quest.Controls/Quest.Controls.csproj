@@ -45,10 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlternativePanel.cs">
+    <Compile Include="QuestConstructor\AlternativePanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AlternativePanel.Designer.cs">
+    <Compile Include="QuestConstructor\AlternativePanel.Designer.cs">
       <DependentUpon>AlternativePanel.cs</DependentUpon>
     </Compile>
     <Compile Include="QuestInterview\AnswerPanel.cs">
@@ -77,10 +77,10 @@
     <Compile Include="QuestInterview\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuestPanel.cs">
+    <Compile Include="QuestConstructor\QuestPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="QuestPanel.Designer.cs">
+    <Compile Include="QuestConstructor\QuestPanel.Designer.cs">
       <DependentUpon>QuestPanel.cs</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -101,7 +101,7 @@
     <Content Include="Resources\up_alt.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AlternativePanel.resx">
+    <EmbeddedResource Include="QuestConstructor\AlternativePanel.resx">
       <DependentUpon>AlternativePanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuestInterview\AnswerPanel.resx">
@@ -117,7 +117,7 @@
     <EmbeddedResource Include="QuestInterview\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuestPanel.resx">
+    <EmbeddedResource Include="QuestConstructor\QuestPanel.resx">
       <DependentUpon>QuestPanel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

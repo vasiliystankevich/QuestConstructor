@@ -1,6 +1,6 @@
 ﻿using Quest.Controls.Properties;
 
-namespace Quest.Controls
+namespace Quest.Controls.QuestConstructor
 {
     partial class AlternativePanel
     {
