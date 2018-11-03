@@ -6,7 +6,7 @@ using Quest.Controls;
 using Quest.Controls.QuestConstructor;
 using Quest.Core;
 
-namespace QuestConstructor
+namespace Quest.Constructor
 {
     public partial class MainForm : Form
     {

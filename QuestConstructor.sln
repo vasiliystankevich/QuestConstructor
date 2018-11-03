@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{DF842C0F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "Sources\Tests\UnitTestProject\UnitTestProject.csproj", "{2FBFD94D-66E5-48BA-A4B4-8A9C6810A112}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuestConstructor", "Sources\UI\QuestConstructor\QuestConstructor.csproj", "{62C63751-196E-416F-802D-A281AEAE398A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quest.Constructor", "Sources\UI\QuestConstructor\Quest.Constructor.csproj", "{62C63751-196E-416F-802D-A281AEAE398A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuestInterview", "Sources\UI\QuestInterview\QuestInterview.csproj", "{2693933E-C04A-4AA7-A516-9638C94E98CB}"
 EndProject
