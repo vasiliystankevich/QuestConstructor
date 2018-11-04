@@ -7,10 +7,11 @@
     <ProjectGuid>{B1BC5ED0-E216-4004-AA85-91427413EB89}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Translations</RootNamespace>
-    <AssemblyName>Translations</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <RootNamespace>Quest.Localizable</RootNamespace>
+    <AssemblyName>Quest.Localizable</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -158,59 +159,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="I18NEngine.cs" />
-    <Compile Include="i18n\common\messages.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>messages.resx</DependentUpon>
-    </Compile>
-    <Compile Include="i18n\quest\constructor\messages.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>messages.resx</DependentUpon>
-    </Compile>
-    <Compile Include="i18n\quest\controls\messages.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>messages.resx</DependentUpon>
-    </Compile>
-    <Compile Include="i18n\quest\core\messages.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>messages.resx</DependentUpon>
-    </Compile>
-    <Compile Include="i18n\quest\interview\messages.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>messages.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="PrecompiledScript.bat" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="i18n\common\messages.en-US.resx" />
-    <EmbeddedResource Include="i18n\common\messages.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>messages.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="i18n\quest\constructor\messages.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>messages.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="i18n\quest\controls\messages.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>messages.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="i18n\quest\core\messages.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>messages.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="i18n\quest\interview\messages.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>messages.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="i18n\common\messages.txt" />

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Translations
+namespace Quest.Localizable
 {
     public static class I18NEngine
     {

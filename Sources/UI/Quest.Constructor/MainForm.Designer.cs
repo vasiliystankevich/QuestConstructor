@@ -54,102 +54,71 @@
             this.btRun,
             this.toolStripSeparator3,
             this.btExportCSV});
-            this.tsMain.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.tsMain, "tsMain");
             this.tsMain.Name = "tsMain";
-            this.tsMain.Size = new System.Drawing.Size(572, 27);
-            this.tsMain.TabIndex = 0;
-            this.tsMain.Text = "toolStrip1";
             // 
             // btOpen
             // 
             this.btOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btOpen.Image = ((System.Drawing.Image)(resources.GetObject("btOpen.Image")));
-            this.btOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
+            resources.ApplyResources(this.btOpen, "btOpen");
             this.btOpen.Name = "btOpen";
-            this.btOpen.Size = new System.Drawing.Size(24, 24);
-            this.btOpen.Text = "Открыть Опросник";
             this.btOpen.Click += new System.EventHandler(this.btOpen_Click);
             // 
             // btSave
             // 
             this.btSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btSave.Image = ((System.Drawing.Image)(resources.GetObject("btSave.Image")));
-            this.btSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            resources.ApplyResources(this.btSave, "btSave");
             this.btSave.Name = "btSave";
-            this.btSave.Size = new System.Drawing.Size(24, 24);
-            this.btSave.Text = "Сохранить Опросник";
             this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
             // toolStripSeparator1
             // 
-            this.toolStripSeparator1.AutoSize = false;
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(16, 27);
             // 
             // btAddQuest
             // 
             this.btAddQuest.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btAddQuest.Image = ((System.Drawing.Image)(resources.GetObject("btAddQuest.Image")));
-            this.btAddQuest.ImageTransparentColor = System.Drawing.Color.Magenta;
+            resources.ApplyResources(this.btAddQuest, "btAddQuest");
             this.btAddQuest.Name = "btAddQuest";
-            this.btAddQuest.Size = new System.Drawing.Size(24, 24);
-            this.btAddQuest.Text = "Добавить Вопрос";
             this.btAddQuest.Click += new System.EventHandler(this.btAddQuest_Click);
             // 
             // toolStripSeparator2
             // 
-            this.toolStripSeparator2.AutoSize = false;
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(16, 27);
             // 
             // btRun
             // 
             this.btRun.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btRun.Image = ((System.Drawing.Image)(resources.GetObject("btRun.Image")));
-            this.btRun.ImageTransparentColor = System.Drawing.Color.Magenta;
+            resources.ApplyResources(this.btRun, "btRun");
             this.btRun.Name = "btRun";
-            this.btRun.Size = new System.Drawing.Size(24, 24);
-            this.btRun.Text = "Запуск Опросника";
             this.btRun.Click += new System.EventHandler(this.btRun_Click);
             // 
             // toolStripSeparator3
             // 
-            this.toolStripSeparator3.AutoSize = false;
+            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(16, 27);
             // 
             // btExportCSV
             // 
             this.btExportCSV.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btExportCSV.Image = ((System.Drawing.Image)(resources.GetObject("btExportCSV.Image")));
-            this.btExportCSV.ImageTransparentColor = System.Drawing.Color.Magenta;
+            resources.ApplyResources(this.btExportCSV, "btExportCSV");
             this.btExportCSV.Name = "btExportCSV";
-            this.btExportCSV.Size = new System.Drawing.Size(24, 24);
-            this.btExportCSV.Text = "Экспорт анкет в CSV";
             this.btExportCSV.Click += new System.EventHandler(this.btExportCSV_Click);
             // 
             // pnMain
             // 
-            this.pnMain.AutoScroll = true;
-            this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnMain.Location = new System.Drawing.Point(0, 27);
-            this.pnMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            resources.ApplyResources(this.pnMain, "pnMain");
             this.pnMain.Name = "pnMain";
-            this.pnMain.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pnMain.Size = new System.Drawing.Size(572, 324);
-            this.pnMain.TabIndex = 1;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(572, 351);
             this.Controls.Add(this.pnMain);
             this.Controls.Add(this.tsMain);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Quest Constructor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.tsMain.ResumeLayout(false);
             this.tsMain.PerformLayout();
