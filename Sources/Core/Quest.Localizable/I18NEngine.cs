@@ -12,19 +12,10 @@ namespace Quest.Localizable
             {
                 case "common": result = i18n.common.messages.ResourceManager.GetString(id); break;
 
-                case "quest.core": break;
-                case "quest.controls": break;
-                case "quest.constructor": break;
-                case "quest.interview": break;
-                //case "modules.core.accounts.controller": result = i18n.modules.core.accounts.controller.messages.ResourceManager.GetString(id); break;
-                //case "modules.core.accounts.login": result = i18n.modules.core.accounts.login.messages.ResourceManager.GetString(id); break;
-
-                //case "modules.site.home.controller": result = i18n.modules.site.home.controller.messages.ResourceManager.GetString(id); break;
-                //case "modules.site.home.index": result = i18n.modules.site.home.index.messages.ResourceManager.GetString(id); break;
-
-                //case "modules.site.registration.controller": result = i18n.modules.site.registration.controller.messages.ResourceManager.GetString(id); break;
-                //case "modules.site.registration.index": result = i18n.modules.site.registration.index.messages.ResourceManager.GetString(id); break;
-                //case "modules.site.registration.finish": result = i18n.modules.site.registration.finish.messages.ResourceManager.GetString(id); break;
+                case "quest.core": result = i18n.quest.core.messages.ResourceManager.GetString(id); break;
+                case "quest.controls": result = i18n.quest.controls.messages.ResourceManager.GetString(id); break;
+                case "quest.constructor": result = i18n.quest.constructor.messages.ResourceManager.GetString(id); break;
+                case "quest.interview": result = i18n.quest.interview.messages.ResourceManager.GetString(id); break;
             }
             return result;
         }

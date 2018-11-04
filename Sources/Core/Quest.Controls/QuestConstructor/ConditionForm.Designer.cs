@@ -1,4 +1,5 @@
 ﻿using Quest.Controls.Properties;
+using Quest.Localizable;
 
 namespace Quest.Controls.QuestConstructor
 {

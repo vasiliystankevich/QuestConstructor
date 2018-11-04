@@ -2,14 +2,17 @@
 using System.Windows.Forms;
 using Quest.Core.Model;
 using Quest.Core.Services;
+using Quest.Core.UI;
+using Quest.Localizable;
 
 namespace Quest.Controls.QuestConstructor
 {
-    public partial class ConditionForm : Form
+    public partial class ConditionForm : Form, ILocalizableComponents
     {
         public ConditionForm()
         {
             InitializeComponent();
+            this.SetCulture("ru-RU");
         }
 
         public void Build(Questionnaire questionnaire, Condition condition)
@@ -36,6 +39,14 @@ namespace Quest.Controls.QuestConstructor
             condition.Expression = expression;
             Changed();
             DialogResult = DialogResult.OK;
+        }
+
+        public void LocalizableComponents()
+        {
+            Text = I18NEngine.GetString("quest.controls", "questconstructor_conditionform_this_text");
+            label1.Text = I18NEngine.GetString("quest.controls", "questconstructor_conditionform_label1_text");
+            label2.Text = I18NEngine.GetString("quest.controls", "questconstructor_conditionform_label2_text");
+            btOk.Text = I18NEngine.GetString("quest.controls", "questconstructor_conditionform_btok_text");
         }
 
         private Condition condition;

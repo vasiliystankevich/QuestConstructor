@@ -1,1 +1,5 @@
-﻿test_string=[test string]
+﻿questconstructor_alternativepanel_lbcondition_text=[condition]
+questconstructor_conditionform_this_text=[condition form]
+questconstructor_conditionform_label1_text=[condition]
+questconstructor_conditionform_btok_text=[ok]
+questconstructor_conditionform_label2_text=[description]

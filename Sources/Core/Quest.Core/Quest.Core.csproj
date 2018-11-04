@@ -61,6 +61,8 @@
     <Compile Include="Services\QuestManipulator.cs" />
     <Compile Include="UI\ExceptionHandler.cs" />
     <Compile Include="UI\IconForAllForm.cs" />
+    <Compile Include="UI\ILocalizableComponents.cs" />
+    <Compile Include="UI\LocalizableComponentsExtended.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

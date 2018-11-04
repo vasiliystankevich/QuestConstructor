@@ -148,7 +148,7 @@
     <value>Top, Left, Right</value>
   </data>
   <data name="tbTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>55, 3</value>
+    <value>56, 3</value>
   </data>
   <data name="tbTitle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -295,7 +295,7 @@
     <value>True</value>
   </data>
   <data name="lbCondition.Location" type="System.Drawing.Point, System.Drawing">
-    <value>338, 5</value>
+    <value>341, 6</value>
   </data>
   <data name="lbCondition.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -304,13 +304,13 @@
     <value>49, 14</value>
   </data>
   <data name="lbCondition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 13</value>
+    <value>47, 14</value>
   </data>
   <data name="lbCondition.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
   <data name="lbCondition.Text" xml:space="preserve">
-    <value>Если...</value>
+    <value>[condition]</value>
   </data>
   <data name="&gt;&gt;lbCondition.Name" xml:space="preserve">
     <value>lbCondition</value>
