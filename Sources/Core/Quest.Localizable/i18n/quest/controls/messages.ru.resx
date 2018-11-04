@@ -133,4 +133,10 @@
     <value>В выражении вы можете использовать имена вопросов, константы, коды альтернатив, скобки, связки and и or, операторы = (равно) &lt;&gt;(не равно) и другие.
 Например, выражение A1 = 2 означает что условие выполняется только если код ответа в вопросе A1 равен 2.</value>
   </data>
+  <data name="questconstructor_questpanel_lbcondition_text" xml:space="preserve">
+    <value>Условие...</value>
+  </data>
+  <data name="questconstructor_questpanel_label3_text" xml:space="preserve">
+    <value>Альтернативы</value>
+  </data>
 </root>

@@ -2,14 +2,17 @@
 using System.Windows.Forms;
 using Quest.Core.Model;
 using Quest.Core.Services;
+using Quest.Core.UI;
+using Quest.Localizable;
 
 namespace Quest.Controls.QuestConstructor
 {
-    public partial class QuestPanel : UserControl
+    public partial class QuestPanel : UserControl, ILocalizableComponents
     {
         public QuestPanel()
         {
             InitializeComponent();
+            this.SetCulture("ru-RU");
         }
 
         /// <summary>
@@ -104,6 +107,12 @@ namespace Quest.Controls.QuestConstructor
             form.ShowDialog(this);
 
             Build(questionnaire, quest);
+        }
+
+        public void LocalizableComponents()
+        {
+            lbCondition.Text = I18NEngine.GetString("quest.controls", "questconstructor_questpanel_lbcondition_text");
+            label3.Text = I18NEngine.GetString("quest.controls", "questconstructor_questpanel_label3_text");
         }
 
         private Questionnaire questionnaire;

@@ -217,13 +217,13 @@
     <value>2, 0, 2, 0</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 13</value>
+    <value>67, 13</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Альтернативы</value>
+    <value>[alternatives]</value>
   </data>
   <data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
@@ -238,7 +238,7 @@
     <value>6</value>
   </data>
   <data name="cbQuestType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>340, 46</value>
+    <value>341, 48</value>
   </data>
   <data name="cbQuestType.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -277,13 +277,13 @@
     <value>225, 14</value>
   </data>
   <data name="lbCondition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 13</value>
+    <value>56, 13</value>
   </data>
   <data name="lbCondition.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
   <data name="lbCondition.Text" xml:space="preserve">
-    <value>Если...</value>
+    <value>[condition]</value>
   </data>
   <data name="&gt;&gt;lbCondition.Name" xml:space="preserve">
     <value>lbCondition</value>
@@ -457,7 +457,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>643, 102</value>
+    <value>641, 100</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>QuestPanel</value>

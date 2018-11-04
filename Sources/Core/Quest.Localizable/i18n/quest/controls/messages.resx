@@ -132,4 +132,10 @@
   <data name="questconstructor_conditionform_label2_text" xml:space="preserve">
     <value>[description]</value>
   </data>
+  <data name="questconstructor_questpanel_lbcondition_text" xml:space="preserve">
+    <value>[condition]</value>
+  </data>
+  <data name="questconstructor_questpanel_label3_text" xml:space="preserve">
+    <value>[alternatives]</value>
+  </data>
 </root>

@@ -104,5 +104,23 @@ namespace Quest.Localizable.i18n.quest.controls {
                 return ResourceManager.GetString("questconstructor_conditionform_this_text", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на [alternatives].
+        /// </summary>
+        public static string questconstructor_questpanel_label3_text {
+            get {
+                return ResourceManager.GetString("questconstructor_questpanel_label3_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на [condition].
+        /// </summary>
+        public static string questconstructor_questpanel_lbcondition_text {
+            get {
+                return ResourceManager.GetString("questconstructor_questpanel_lbcondition_text", resourceCulture);
+            }
+        }
     }
 }
