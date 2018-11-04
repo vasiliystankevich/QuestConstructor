@@ -13,7 +13,7 @@ namespace Quest.Controls.QuestConstructor
         public AlternativePanel()
         {
             InitializeComponent();
-            this.SetCulture("ru-RU");
+            LocalizableComponents();
         }
 
         public void Build(Questionnaire questionnaire, Core.Model.Quest quest, Alternative alt)

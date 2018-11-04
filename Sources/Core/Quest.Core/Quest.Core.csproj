@@ -62,7 +62,7 @@
     <Compile Include="UI\ExceptionHandler.cs" />
     <Compile Include="UI\IconForAllForm.cs" />
     <Compile Include="UI\ILocalizableComponents.cs" />
-    <Compile Include="UI\LocalizableComponentsExtended.cs" />
+    <Compile Include="UI\Localizable.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

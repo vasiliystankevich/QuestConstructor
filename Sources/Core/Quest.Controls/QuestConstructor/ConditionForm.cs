@@ -12,7 +12,7 @@ namespace Quest.Controls.QuestConstructor
         public ConditionForm()
         {
             InitializeComponent();
-            this.SetCulture("ru-RU");
+            LocalizableComponents();
         }
 
         public void Build(Questionnaire questionnaire, Condition condition)

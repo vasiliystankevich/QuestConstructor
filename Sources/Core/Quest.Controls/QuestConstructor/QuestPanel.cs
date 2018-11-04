@@ -12,7 +12,7 @@ namespace Quest.Controls.QuestConstructor
         public QuestPanel()
         {
             InitializeComponent();
-            this.SetCulture("ru-RU");
+            LocalizableComponents();
         }
 
         /// <summary>
