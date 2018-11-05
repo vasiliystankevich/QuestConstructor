@@ -29,7 +29,7 @@ namespace Quest.Controls.QuestConstructor
 
             tbId.Text = quest.Id;
             tbTitle.Text = quest.Title;
-            lbCondition.Text = quest.Condition?.ToString() ?? "Если...";
+            lbCondition.Text = quest.Condition?.ToString() ?? I18NEngine.GetString("quest.controls", "questconstructor_questpanel_lbcondition_text");
 
             cbQuestType.DataSource = Enum.GetValues(typeof(QuestType));
             cbQuestType.SelectedItem = quest.QuestType;
