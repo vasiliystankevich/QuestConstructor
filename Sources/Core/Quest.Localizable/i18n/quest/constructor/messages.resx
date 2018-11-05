@@ -117,7 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="test_string" xml:space="preserve">
-    <value>[test string]</value>
+  <data name="btexportcsv_click_find_questionnaire_message_template" xml:space="preserve">
+    <value>[message template]</value>
+  </data>
+  <data name="btexportcsv_click_not_find_questionnaire_message" xml:space="preserve">
+    <value>[message]</value>
+  </data>
+  <data name="filedialog_filter_csv_file_template" xml:space="preserve">
+    <value>[filter csv file template]</value>
+  </data>
+  <data name="filedialog_quiz_filter_template" xml:space="preserve">
+    <value>[filter quiz template]</value>
+  </data>
+  <data name="findfiles_questionnaire_pattern" xml:space="preserve">
+    <value>[questionnaire pattern]</value>
+  </data>
+  <data name="ask_about_save_current_questionnaire_message_text" xml:space="preserve">
+    <value>[text]</value>
+  </data>
+  <data name="ask_about_save_current_questionnaire_message_caption" xml:space="preserve">
+    <value>[caption]</value>
   </data>
 </root>

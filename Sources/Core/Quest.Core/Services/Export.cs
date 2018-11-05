@@ -8,10 +8,10 @@ namespace Quest.Core.Services
 {
     public class Export
     {
-        public void ExportToCSV(IEnumerable<Anketa> anketas, string fileName)
+        public static void ExportToCsv(List<Anketa> anketas, string fileName)
         {
             var questNames = anketas.SelectMany(a => a).Select(a => a.QuestId).Distinct().ToArray();
-            using (var sw = new StreamWriter(fileName, false, Encoding))
+            using (var sw = new StreamWriter(fileName, false, Encoding.UTF8))
             {
                 sw.WriteLine(string.Join(Separator, questNames));
                 foreach (var anketa in anketas)
@@ -32,7 +32,6 @@ namespace Quest.Core.Services
             }
         }
 
-        public string Separator { get; set; } = ";";
-        public Encoding Encoding { get; set; } = Encoding.UTF8;
+        const string Separator = ";";
     }
 }

@@ -61,11 +61,11 @@ namespace Quest.Localizable.i18n.quest.core {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на [test string].
+        ///   Ищет локализованную строку, похожую на [question text].
         /// </summary>
-        public static string test_string {
+        public static string models_quest_title {
             get {
-                return ResourceManager.GetString("test_string", resourceCulture);
+                return ResourceManager.GetString("models_quest_title", resourceCulture);
             }
         }
     }

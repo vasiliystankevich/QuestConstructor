@@ -117,7 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="test_string" xml:space="preserve">
-    <value>Тестовая строка</value>
+  <data name="ask_about_save_current_questionnaire_message_caption" xml:space="preserve">
+    <value>Несохраненные изменения</value>
+  </data>
+  <data name="ask_about_save_current_questionnaire_message_text" xml:space="preserve">
+    <value>В текущем опроснике есть несохраненные данные.\r\nВы хотите сохранить опросник?</value>
+  </data>
+  <data name="findfiles_questionnaire_pattern" xml:space="preserve">
+    <value>*.a</value>
+  </data>
+  <data name="btexportcsv_click_not_find_questionnaire_message" xml:space="preserve">
+    <value>В этой папке не найдены анкеты</value>
+  </data>
+  <data name="filedialog_quiz_filter_template" xml:space="preserve">
+    <value>Опросник|*.q</value>
+  </data>
+  <data name="filedialog_filter_csv_file_template" xml:space="preserve">
+    <value>Csv|*.csv</value>
+  </data>
+  <data name="btexportcsv_click_find_questionnaire_message_template" xml:space="preserve">
+    <value>Экспортировано {0} анкет</value>
   </data>
 </root>

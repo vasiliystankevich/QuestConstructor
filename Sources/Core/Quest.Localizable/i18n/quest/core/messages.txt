@@ -1,1 +1,1 @@
-﻿test_string=[test string]
+﻿models_quest_title=[question text]

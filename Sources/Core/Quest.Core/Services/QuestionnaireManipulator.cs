@@ -6,7 +6,7 @@ namespace Quest.Core.Services
 {
     public class QuestionnaireManipulator
     {
-        public Model.Quest AddNewQuest(Questionnaire questionnaire)
+        public static Model.Quest AddNewQuest(Questionnaire questionnaire, string title)
         {
             var counter = 1;
             var name = DefaultQuestPrefix + counter;
@@ -17,7 +17,7 @@ namespace Quest.Core.Services
                 name = DefaultQuestPrefix + counter;
             }
 
-            var quest = new Model.Quest {Id = name, Title = "Текст вопроса"};
+            var quest = new Model.Quest {Id = name, Title = title };
             questionnaire.Add(quest);
             return quest;
         }

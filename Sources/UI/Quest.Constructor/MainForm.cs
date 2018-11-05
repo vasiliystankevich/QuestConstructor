@@ -7,19 +7,18 @@ using Quest.Controls.QuestConstructor;
 using Quest.Core.Helpers;
 using Quest.Core.Model;
 using Quest.Core.Services;
+using Quest.Core.UI;
+using Quest.Localizable;
 
 namespace Quest.Constructor
 {
-    public partial class MainForm : Form
+    public partial class MainForm : Form, ILocalizableComponents
     {
-        private Questionnaire questionnaire = new Questionnaire();
-        private bool changed;
-
         public MainForm()
         {
             InitializeComponent();
-
             Build();
+            LocalizableComponents();
         }
 
         private void Build()
@@ -79,31 +78,36 @@ namespace Quest.Constructor
 
         private void btOpen_Click(object sender, EventArgs e)
         {
+            //Опросник
             AskAboutSaveCurrentQuestionnaire();
-            var ofd = new OpenFileDialog() {Filter = "Опросник|*.q"};
+            var filter = I18NEngine.GetString("quest.constructor", "filedialog_filter_quiz_template");
+            var ofd = new OpenFileDialog {Filter = filter };
             if (ofd.ShowDialog() == DialogResult.OK)
                 LoadQuestionnaireFromFile(ofd.FileName);
         }
 
         private void AskAboutSaveCurrentQuestionnaire()
         {
-            if (changed)
-            {
-                if (MessageBox.Show("В текущем опроснике есть несохраненные данные.\r\nВы хотите сохранить опросник?", "Несохраненные изменения", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    btSave.PerformClick();
-            }
+            if (!changed) return;
+            var text = I18NEngine.GetString("quest.constructor", "ask_about_save_current_questionnaire_message_text");
+            var caption = I18NEngine.GetString("quest.constructor",
+                "ask_about_save_current_questionnaire_message_caption");
+            if (MessageBox.Show(text, caption, MessageBoxButtons.YesNo) == DialogResult.Yes)
+                btSave.PerformClick();
         }
 
         private void btSave_Click(object sender, EventArgs e)
         {
-            var sfd = new SaveFileDialog() { Filter = "Опросник|*.q" };
+            var filter = I18NEngine.GetString("quest.constructor", "filedialog_filter_quiz_template");
+            var sfd = new OpenFileDialog { Filter = filter };
             if (sfd.ShowDialog() == DialogResult.OK)
                 SaveQuestionnaireToFile(sfd.FileName);
         }
 
         private void btAddQuest_Click(object sender, EventArgs e)
         {
-            new QuestionnaireManipulator().AddNewQuest(questionnaire);
+            var questTitle = I18NEngine.GetString("quest.core", "models_quest_title");
+            QuestionnaireManipulator.AddNewQuest(questionnaire, questTitle);
             changed = true;
             Build();
         }
@@ -115,28 +119,42 @@ namespace Quest.Constructor
 
         private void btExportCSV_Click(object sender, EventArgs e)
         {
+            var message = string.Empty;
             var ofd = new OpenFolderDialog();
-            if (ofd.ShowDialog(this) == DialogResult.OK)
+            if (ofd.ShowDialog(this) != DialogResult.OK) return;
+            var questionnairePattern = I18NEngine.GetString("quest.constructor", "findfiles_questionnaire_pattern");
+            var anketas = Directory.GetFiles(ofd.Folder, questionnairePattern).Select(SaverLoader.Load<Anketa>).ToList();
+            if (anketas.Count != 0)
             {
-                var anketas = Directory.GetFiles(ofd.Folder, "*.a").Select(path => SaverLoader.Load<Anketa>(path)).ToList();
-                if (anketas.Count == 0)
-                {
-                    MessageBox.Show("В этой папке не найдены анкеты");
-                    return;
-                }
-
-                var sfd = new SaveFileDialog() {Filter = "CSV|*.csv"};
+                var filter = I18NEngine.GetString("quest.constructor", "filedialog_filter_csv_file_template");
+                var sfd = new SaveFileDialog {Filter = filter};
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
-                    new Export().ExportToCSV(anketas, sfd.FileName);
-                    MessageBox.Show("Экспортировано " + anketas.Count + " анкет");
+                    Export.ExportToCsv(anketas, sfd.FileName);
+                    var messageTemplate = I18NEngine.GetString("quest.constructor",
+                        "btexportcsv_click_find_questionnaire_message_template");
+                    message = string.Format(messageTemplate, anketas.Count);
                 }
             }
+            else
+            {
+                message = I18NEngine.GetString("quest.constructor",
+                    "btexportcsv_click_not_find_questionnaire_message");
+            }
+            MessageBox.Show(message);
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             AskAboutSaveCurrentQuestionnaire();
         }
+
+        public void LocalizableComponents()
+        {
+        }
+
+        Questionnaire questionnaire = new Questionnaire();
+        bool changed;
+
     }
 }

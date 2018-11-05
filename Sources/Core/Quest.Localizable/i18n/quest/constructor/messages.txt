@@ -1,1 +1,7 @@
-﻿test_string=[test string]
+﻿btexportcsv_click_find_questionnaire_message_template=[message template]
+btexportcsv_click_not_find_questionnaire_message=[message]
+filedialog_filter_csv_file_template=[filter csv file template]
+filedialog_quiz_filter_template=[filter quiz template]
+findfiles_questionnaire_pattern=[questionnaire pattern]
+ask_about_save_current_questionnaire_message_text=[text]
+ask_about_save_current_questionnaire_message_caption=[caption]

@@ -74,6 +74,10 @@
       <Project>{441f42b4-d564-4171-bf64-9d52376d7f68}</Project>
       <Name>Quest.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Core\Quest.Localizable\Quest.Localizable.csproj">
+      <Project>{b1bc5ed0-e216-4004-aa85-91427413eb89}</Project>
+      <Name>Quest.Localizable</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

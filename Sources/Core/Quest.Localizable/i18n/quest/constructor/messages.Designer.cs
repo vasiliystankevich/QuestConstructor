@@ -61,11 +61,65 @@ namespace Quest.Localizable.i18n.quest.constructor {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на [test string].
+        ///   Ищет локализованную строку, похожую на [caption].
         /// </summary>
-        public static string test_string {
+        public static string ask_about_save_current_questionnaire_message_caption {
             get {
-                return ResourceManager.GetString("test_string", resourceCulture);
+                return ResourceManager.GetString("ask_about_save_current_questionnaire_message_caption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на [text].
+        /// </summary>
+        public static string ask_about_save_current_questionnaire_message_text {
+            get {
+                return ResourceManager.GetString("ask_about_save_current_questionnaire_message_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на [message template].
+        /// </summary>
+        public static string btexportcsv_click_find_questionnaire_message_template {
+            get {
+                return ResourceManager.GetString("btexportcsv_click_find_questionnaire_message_template", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на [message].
+        /// </summary>
+        public static string btexportcsv_click_not_find_questionnaire_message {
+            get {
+                return ResourceManager.GetString("btexportcsv_click_not_find_questionnaire_message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на [filter csv file template].
+        /// </summary>
+        public static string filedialog_filter_csv_file_template {
+            get {
+                return ResourceManager.GetString("filedialog_filter_csv_file_template", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на [filter quiz template].
+        /// </summary>
+        public static string filedialog_quiz_filter_template {
+            get {
+                return ResourceManager.GetString("filedialog_quiz_filter_template", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на [questionnaire pattern].
+        /// </summary>
+        public static string findfiles_questionnaire_pattern {
+            get {
+                return ResourceManager.GetString("findfiles_questionnaire_pattern", resourceCulture);
             }
         }
     }

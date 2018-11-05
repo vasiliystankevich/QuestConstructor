@@ -11,7 +11,7 @@ namespace Quest.Constructor
         {
             ExceptionHandler.Init();
             IconForAllForm.SetIcon(Controls.Properties.Resources.question1);
-            Localizable.SetCulture("ru-RU");
+            Core.UI.Localizable.SetCulture("ru-RU");
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
