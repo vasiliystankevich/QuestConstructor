@@ -6,7 +6,7 @@ using Quest.Core.Helpers;
 using Quest.Core.Model;
 using Quest.Core.Services;
 
-namespace Quest.Controls.Presenter
+namespace Quest.Controls.Presenters
 {
     public interface IQuestInterview:IDisposable
     {
@@ -69,10 +69,8 @@ namespace Quest.Controls.Presenter
 
         public DialogResult Load(IWin32Window owner)
         {
-            //создаем новую анкету
             Anketa = new Anketa();
 
-            //запрашиваем опросник, если он не задан
             if (Questionnaire == null)
             {
                 var ofd = new OpenFileDialog() { Filter = "Опросник|*.q", Title = "Выберите опросник" };
@@ -81,15 +79,9 @@ namespace Quest.Controls.Presenter
                 Questionnaire = SaverLoader.Load<Questionnaire>(ofd.FileName);
             }
 
-            //создаем процесс опроса (интервью)
             Interview = new Interview(Questionnaire, Anketa);
-            //создаем манипулятор для интервью
             InterviewManipulator = new InterviewManipulator(Interview);
-
-            //переходим к первому вопросу
             InterviewManipulator.GoToNextQuestion();
-
-            //строим интерфейс
             Build();
             return DialogResult.OK;
         }
@@ -102,18 +94,14 @@ namespace Quest.Controls.Presenter
 
         public void Finish(IWin32Window owner)
         {
-            //предлагаем сохранить анкету
-            if (MessageBox.Show("Сохранить анкету?", "Сохранение анкеты", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (MessageBox.Show("Сохранить анкету?", "Сохранение анкеты", MessageBoxButtons.OKCancel) !=
+                DialogResult.OK) return;
+            var sfd = new SaveFileDialog() { Filter = "Анкета|*.a", FileName = Guid.NewGuid().ToString() };
+            if (sfd.ShowDialog(owner) == DialogResult.OK)
             {
-                var sfd = new SaveFileDialog() { Filter = "Анкета|*.a", FileName = Guid.NewGuid().ToString() };
-                if (sfd.ShowDialog(owner) == DialogResult.OK)
-                {
-                    //сохраняем анкету
-                    SaverLoader.Save(Anketa, sfd.FileName);
-                }
+                SaverLoader.Save(Anketa, sfd.FileName);
             }
         }
-
 
         public void Dispose()
         {

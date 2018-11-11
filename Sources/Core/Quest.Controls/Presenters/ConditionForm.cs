@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using Quest.Core.Model;
 using Quest.Core.Services;
 
-namespace Quest.Controls.Presenter
+namespace Quest.Controls.Presenters
 {
     public interface IConditionForm
     {

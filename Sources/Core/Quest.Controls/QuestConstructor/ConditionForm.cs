@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using Quest.Controls.Presenter;
+using Quest.Controls.Presenters;
 using Quest.Core.Model;
 using Quest.Core.UI;
 using Quest.Localizable;
@@ -13,7 +13,7 @@ namespace Quest.Controls.QuestConstructor
         {
             InitializeComponent();
             LocalizableComponents();
-            Presenter = new Presenter.ConditionForm(tbExpression, questionnaire, condition);
+            Presenter = new Presenters.ConditionForm(tbExpression, questionnaire, condition);
         }
 
         private void btOk_Click(object sender, EventArgs e)

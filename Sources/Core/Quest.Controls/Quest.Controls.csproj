@@ -52,10 +52,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Presenter\AlternativePanel.cs" />
-    <Compile Include="Presenter\ConditionForm.cs" />
-    <Compile Include="Presenter\QuestConstructor.cs" />
-    <Compile Include="Presenter\QuestInterview.cs" />
+    <Compile Include="Presenters\AlternativePanel.cs" />
+    <Compile Include="Presenters\ConditionForm.cs" />
+    <Compile Include="Presenters\QuestConstructor.cs" />
+    <Compile Include="Presenters\QuestInterview.cs" />
     <Compile Include="QuestConstructor\AlternativePanel.cs">
       <SubType>UserControl</SubType>
     </Compile>

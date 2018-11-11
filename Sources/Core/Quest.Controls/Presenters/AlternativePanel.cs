@@ -4,7 +4,7 @@ using Quest.Core.Model;
 using Quest.Core.Services;
 using Quest.Localizable;
 
-namespace Quest.Controls.Presenter
+namespace Quest.Controls.Presenters
 {
     public interface IAlternativePanel
     {

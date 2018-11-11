@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Quest.Controls.Presenters;
 using Quest.Core.Model;
 
 namespace Quest.Controls.QuestInterview
@@ -9,12 +10,12 @@ namespace Quest.Controls.QuestInterview
         public MainForm()
         {
             InitializeComponent();
-            Presenter = new Presenter.QuestInterview(pnAnswers);
+            Presenter = new Presenters.QuestInterview(pnAnswers);
         }
 
         public MainForm(Questionnaire questionnaire) : this()
         {
-            Presenter = new Presenter.QuestInterview(pnAnswers, questionnaire);
+            Presenter = new Presenters.QuestInterview(pnAnswers, questionnaire);
         }
 
         protected override void OnLoad(EventArgs e)
@@ -35,6 +36,6 @@ namespace Quest.Controls.QuestInterview
             Close();
         }
 
-        private Presenter.IQuestInterview Presenter { get; }
+        private IQuestInterview Presenter { get; }
     }
 }

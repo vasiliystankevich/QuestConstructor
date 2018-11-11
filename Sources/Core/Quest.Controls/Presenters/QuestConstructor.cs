@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Quest.Controls.QuestConstructor;
 using Quest.Controls.QuestInterview;
@@ -12,7 +8,7 @@ using Quest.Core.Model;
 using Quest.Core.Services;
 using Quest.Localizable;
 
-namespace Quest.Controls.Presenter
+namespace Quest.Controls.Presenters
 {
     public interface IQuestConstructor
     {

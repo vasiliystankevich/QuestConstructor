@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using Quest.Controls.Presenter;
+using Quest.Controls.Presenters;
 
 namespace Quest.Constructor
 {
