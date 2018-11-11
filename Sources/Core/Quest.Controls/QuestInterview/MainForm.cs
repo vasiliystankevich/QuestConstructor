@@ -20,18 +20,18 @@ namespace Quest.Controls.QuestInterview
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            var result=Presenter.OnLoad(e, this);
+            var result=Presenter.Load(this);
             if (result!=DialogResult.OK) Close();
         }
 
         private void btNext_Click(object sender, EventArgs e)
         {
-            Presenter.btNext_Click(sender, e);
+            Presenter.Next();
         }
 
         private void btFinish_Click(object sender, EventArgs e)
         {
-            Presenter.btFinish_Click(sender, e, this);
+            Presenter.Finish(this);
             Close();
         }
 

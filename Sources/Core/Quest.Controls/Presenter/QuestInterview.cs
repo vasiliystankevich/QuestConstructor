@@ -11,51 +11,51 @@ namespace Quest.Controls.Presenter
     public interface IQuestInterview:IDisposable
     {
         void Build();
-        DialogResult OnLoad(EventArgs e, IWin32Window owner);
-        void btNext_Click(object sender, EventArgs e);
-        void btFinish_Click(object sender, EventArgs e, IWin32Window owner);
+        DialogResult Load(IWin32Window owner);
+        void Next();
+        void Finish(IWin32Window owner);
     }
 
     public class QuestInterview : IQuestInterview
     {
         public QuestInterview(FlowLayoutPanel pnAnswers, Questionnaire questionnaire):this(pnAnswers)
         {
-            this.questionnaire = questionnaire;
+            Questionnaire = questionnaire;
         }
 
         public QuestInterview(FlowLayoutPanel pnAnswers)
         {
-            this.pnAnswers = pnAnswers;
+            PnAnswers = pnAnswers;
         }
 
         public void Build()
         {
             //создаем хелпер отрисовки, останавливаем отрисовку
             //var helper = new ControlHelper(pnAnswers);
-            pnAnswers.SuspendLayout();
+            PnAnswers.SuspendLayout();
             //очищаем панель ответов
-            pnAnswers.Controls.Clear();
+            PnAnswers.Controls.Clear();
 
             //отображаем уже отвеченные вопросы
-            foreach (var answer in interview.PassedAnswers)
+            foreach (var answer in Interview.PassedAnswers)
             {
                 //создаем панель ответа
                 var pn = new AnswerPanel();
                 //строим
-                pn.Build(interviewManipulator, questionnaire.First(q => q.Id == answer.QuestId), answer, true);
+                pn.Build(InterviewManipulator, Questionnaire.First(q => q.Id == answer.QuestId), answer, true);
                 //добавляем на форму
-                pn.Parent = pnAnswers;
+                pn.Parent = PnAnswers;
             }
 
             //отображаем вопрос, на который нужно ответить
-            if (interview.CurrentAnswer != null)
+            if (Interview.CurrentAnswer != null)
             {
                 //создаем панель ответа
                 var pn = new AnswerPanel();
                 //строим
-                pn.Build(interviewManipulator, questionnaire.First(q => q.Id == interview.CurrentAnswer.QuestId), interview.CurrentAnswer, false);
+                pn.Build(InterviewManipulator, Questionnaire.First(q => q.Id == Interview.CurrentAnswer.QuestId), Interview.CurrentAnswer, false);
                 //добавляем на форму
-                pn.Parent = pnAnswers;
+                pn.Parent = PnAnswers;
             }
 
             //добавляем кнопку "далее"
@@ -64,45 +64,43 @@ namespace Quest.Controls.Presenter
 
             //восстанавливаем отрисовку
             //helper.ResumeDrawing();
-            pnAnswers.ResumeLayout(false);
+            PnAnswers.ResumeLayout(false);
         }
 
-        public DialogResult OnLoad(EventArgs e, IWin32Window owner)
+        public DialogResult Load(IWin32Window owner)
         {
             //создаем новую анкету
-            anketa = new Anketa();
+            Anketa = new Anketa();
 
             //запрашиваем опросник, если он не задан
-            if (questionnaire == null)
+            if (Questionnaire == null)
             {
                 var ofd = new OpenFileDialog() { Filter = "Опросник|*.q", Title = "Выберите опросник" };
                 var dialogResult = ofd.ShowDialog(owner);
                 if (dialogResult != DialogResult.OK) return DialogResult.Cancel;
-                questionnaire = SaverLoader.Load<Questionnaire>(ofd.FileName);
+                Questionnaire = SaverLoader.Load<Questionnaire>(ofd.FileName);
             }
 
             //создаем процесс опроса (интервью)
-            interview = new Interview(questionnaire, anketa);
+            Interview = new Interview(Questionnaire, Anketa);
             //создаем манипулятор для интервью
-            interviewManipulator = new InterviewManipulator(interview);
+            InterviewManipulator = new InterviewManipulator(Interview);
 
             //переходим к первому вопросу
-            interviewManipulator.GoToNextQuestion();
+            InterviewManipulator.GoToNextQuestion();
 
             //строим интерфейс
             Build();
             return DialogResult.OK;
         }
 
-        public void btNext_Click(object sender, EventArgs e)
+        public void Next()
         {
-            //переходим к следующему вопросу
-            interviewManipulator.GoToNextQuestion();
-            //строим интерфейс
+            InterviewManipulator.GoToNextQuestion();
             Build();
         }
 
-        public void btFinish_Click(object sender, EventArgs e, IWin32Window owner)
+        public void Finish(IWin32Window owner)
         {
             //предлагаем сохранить анкету
             if (MessageBox.Show("Сохранить анкету?", "Сохранение анкеты", MessageBoxButtons.OKCancel) == DialogResult.OK)
@@ -111,27 +109,19 @@ namespace Quest.Controls.Presenter
                 if (sfd.ShowDialog(owner) == DialogResult.OK)
                 {
                     //сохраняем анкету
-                    SaverLoader.Save(anketa, sfd.FileName);
+                    SaverLoader.Save(Anketa, sfd.FileName);
                 }
             }
-
         }
 
-        //интервью
-        private Interview interview;
-
-        //функционал интервью
-        private InterviewManipulator interviewManipulator;
-
-        //текущий опросник
-        private Questionnaire questionnaire;
-
-        //текущая анкета
-        private Anketa anketa;
-        private FlowLayoutPanel pnAnswers { get; }
 
         public void Dispose()
         {
         }
+        private Interview Interview { get; set; }
+        private InterviewManipulator InterviewManipulator { get; set; }
+        private Questionnaire Questionnaire { get; set; }
+        private Anketa Anketa { get; set; }
+        private FlowLayoutPanel PnAnswers { get; }
     }
 }
