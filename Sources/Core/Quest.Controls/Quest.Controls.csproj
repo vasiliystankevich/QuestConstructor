@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Presenter\QuestConstructor.cs" />
     <Compile Include="Presenter\QuestInterview.cs" />
     <Compile Include="QuestConstructor\AlternativePanel.cs">
       <SubType>UserControl</SubType>
