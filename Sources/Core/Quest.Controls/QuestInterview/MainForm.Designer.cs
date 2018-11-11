@@ -60,6 +60,7 @@
 
         protected override void Dispose(bool disposing)
         {
+            Presenter.Dispose();
             if (disposing && (components != null))
             {
                 components.Dispose();
