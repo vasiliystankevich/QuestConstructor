@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using Microsoft.WindowsAPICodePack.Dialogs;
 
 namespace Quest.Controls.QuestConstructor
 {
@@ -14,54 +14,16 @@ namespace Quest.Controls.QuestConstructor
 
         private DialogResult ShowVistaDialog(IWin32Window owner)
         {
-            var frm = (NativeMethods.IFileDialog)new NativeMethods.FileOpenDialogRCW();
-            uint options;
-            frm.GetOptions(out options);
-            options |= NativeMethods.FosPickfolders | NativeMethods.FosForcefilesystem | NativeMethods.FosNovalidate | NativeMethods.FosNotestfilecreate | NativeMethods.FosDontaddtorecent;
-            frm.SetOptions(options);
-            if (InitialFolder != null)
+            var folderDialog = new CommonOpenFileDialog
             {
-                NativeMethods.IShellItem directoryShellItem;
-                var riid = new Guid("43826D1E-E718-42EE-BC55-A1E261C37BFE"); //IShellItem
-                if (NativeMethods.SHCreateItemFromParsingName(InitialFolder, IntPtr.Zero, ref riid, out directoryShellItem) == NativeMethods.SOk)
-                {
-                    frm.SetFolder(directoryShellItem);
-                }
-            }
-            if (DefaultFolder != null)
-            {
-                NativeMethods.IShellItem directoryShellItem;
-                var riid = new Guid("43826D1E-E718-42EE-BC55-A1E261C37BFE"); //IShellItem
-                if (NativeMethods.SHCreateItemFromParsingName(DefaultFolder, IntPtr.Zero, ref riid, out directoryShellItem) == NativeMethods.SOk)
-                {
-                    frm.SetDefaultFolder(directoryShellItem);
-                }
-            }
-
-            if (frm.Show(owner.Handle) == NativeMethods.SOk)
-            {
-                NativeMethods.IShellItem shellItem;
-                if (frm.GetResult(out shellItem) == NativeMethods.SOk)
-                {
-                    IntPtr pszString;
-                    if (shellItem.GetDisplayName(NativeMethods.SigdnFilesyspath, out pszString) == NativeMethods.SOk)
-                    {
-                        if (pszString != IntPtr.Zero)
-                        {
-                            try
-                            {
-                                Folder = Marshal.PtrToStringAuto(pszString);
-                                return DialogResult.OK;
-                            }
-                            finally
-                            {
-                                Marshal.FreeCoTaskMem(pszString);
-                            }
-                        }
-                    }
-                }
-            }
-            return DialogResult.Cancel;
+                IsFolderPicker = true,
+                Multiselect = false,
+                AllowNonFileSystemItems = false,
+                DefaultDirectory = DefaultFolder
+            };
+            var result = folderDialog.ShowDialog(owner.Handle);
+            folderDialog.Dispose();
+            return result == CommonFileDialogResult.Ok ? DialogResult.OK : DialogResult.Cancel;
         }
 
         private DialogResult ShowLegacyDialog(IWin32Window owner)
@@ -71,7 +33,7 @@ namespace Quest.Controls.QuestConstructor
                 frm.CheckFileExists = false;
                 frm.CheckPathExists = true;
                 frm.CreatePrompt = false;
-                frm.Filter = "|" + Guid.Empty.ToString();
+                frm.Filter = "|" + Guid.Empty;
                 frm.FileName = "any";
                 if (InitialFolder != null) { frm.InitialDirectory = InitialFolder; }
                 frm.OverwritePrompt = false;

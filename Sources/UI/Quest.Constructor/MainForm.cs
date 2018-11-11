@@ -122,25 +122,25 @@ namespace Quest.Constructor
             var message = string.Empty;
             var ofd = new OpenFolderDialog();
             if (ofd.ShowDialog(this) != DialogResult.OK) return;
-            var questionnairePattern = I18NEngine.GetString("quest.constructor", "findfiles_questionnaire_pattern");
-            var anketas = Directory.GetFiles(ofd.Folder, questionnairePattern).Select(SaverLoader.Load<Anketa>).ToList();
-            if (anketas.Count != 0)
-            {
-                var filter = I18NEngine.GetString("quest.constructor", "filedialog_filter_csv_file_template");
-                var sfd = new SaveFileDialog {Filter = filter};
-                if (sfd.ShowDialog() == DialogResult.OK)
-                {
-                    Export.ExportToCsv(anketas, sfd.FileName);
-                    var messageTemplate = I18NEngine.GetString("quest.constructor",
-                        "btexportcsv_click_find_questionnaire_message_template");
-                    message = string.Format(messageTemplate, anketas.Count);
-                }
-            }
-            else
-            {
-                message = I18NEngine.GetString("quest.constructor",
-                    "btexportcsv_click_not_find_questionnaire_message");
-            }
+            //var questionnairePattern = I18NEngine.GetString("quest.constructor", "findfiles_questionnaire_pattern");
+            //var anketas = Directory.GetFiles(ofd.Folder, questionnairePattern).Select(SaverLoader.Load<Anketa>).ToList();
+            //if (anketas.Count != 0)
+            //{
+            //    var filter = I18NEngine.GetString("quest.constructor", "filedialog_filter_csv_file_template");
+            //    var sfd = new SaveFileDialog {Filter = filter};
+            //    if (sfd.ShowDialog() == DialogResult.OK)
+            //    {
+            //        Export.ExportToCsv(anketas, sfd.FileName);
+            //        var messageTemplate = I18NEngine.GetString("quest.constructor",
+            //            "btexportcsv_click_find_questionnaire_message_template");
+            //        message = string.Format(messageTemplate, anketas.Count);
+            //    }
+            //}
+            //else
+            //{
+            //    message = I18NEngine.GetString("quest.constructor",
+            //        "btexportcsv_click_not_find_questionnaire_message");
+            //}
             MessageBox.Show(message);
         }
 

@@ -39,6 +39,7 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.btExportCSV = new System.Windows.Forms.ToolStripButton();
             this.pnMain = new System.Windows.Forms.FlowLayoutPanel();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.tsMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -139,6 +140,7 @@
         private System.Windows.Forms.FlowLayoutPanel pnMain;
         private System.Windows.Forms.ToolStripButton btExportCSV;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
     }
 }
 
