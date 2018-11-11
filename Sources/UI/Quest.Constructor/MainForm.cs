@@ -9,41 +9,41 @@ namespace Quest.Constructor
         public MainForm()
         {
             InitializeComponent();
-            presenter = new QuestConstructor(pnMain, btSave);
-            presenter.Build();
+            Presenter = new QuestConstructor(pnMain, btSave);
+            Presenter.Build();
         }
 
         private void btOpen_Click(object sender, EventArgs e)
         {
-            presenter.btOpen_Click();
+            Presenter.Open();
         }
 
         private void btSave_Click(object sender, EventArgs e)
         {
-            presenter.btSave_Click();
+            Presenter.Save();
         }
 
         private void btAddQuest_Click(object sender, EventArgs e)
         {
-            presenter.btAddQuest_Click();
+            Presenter.AddQuest();
         }
 
         private void btRun_Click(object sender, EventArgs e)
         {
-            presenter.btRun_Click(this);
+            Presenter.Run(this);
         }
 
         private void btExportCSV_Click(object sender, EventArgs e)
         {
-            presenter.btExportCSV_Click(this);
+            Presenter.ExportCsv(this);
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            presenter.MainForm_FormClosing();
+            Presenter.AskAboutSaveCurrentQuestionnaire();
         }
 
-        IQuestConstructor presenter { get; set; }
+        IQuestConstructor Presenter { get; }
 
     }
 }

@@ -17,12 +17,12 @@ namespace Quest.Controls.Presenter
     public interface IQuestConstructor
     {
         void Build();
-        void btOpen_Click();
-        void btSave_Click();
-        void btAddQuest_Click();
-        void btRun_Click(IWin32Window owner);
-        void btExportCSV_Click(IWin32Window owner);
-        void MainForm_FormClosing();
+        void Open();
+        void Save();
+        void AddQuest();
+        void Run(IWin32Window owner);
+        void ExportCsv(IWin32Window owner);
+        void AskAboutSaveCurrentQuestionnaire();
     }
 
     public class QuestConstructor : IQuestConstructor
@@ -90,7 +90,7 @@ namespace Quest.Controls.Presenter
             new MainForm(questionnaire).ShowDialog(owner);
         }
 
-        public void btOpen_Click()
+        public void Open()
         {
             //Опросник
             AskAboutSaveCurrentQuestionnaire();
@@ -100,7 +100,7 @@ namespace Quest.Controls.Presenter
                 LoadQuestionnaireFromFile(ofd.FileName);
         }
 
-        private void AskAboutSaveCurrentQuestionnaire()
+        public void AskAboutSaveCurrentQuestionnaire()
         {
             if (!changed) return;
             var text = I18NEngine.GetString("quest.constructor", "ask_about_save_current_questionnaire_message_text");
@@ -110,7 +110,7 @@ namespace Quest.Controls.Presenter
                 btSave.PerformClick();
         }
 
-        public void btSave_Click()
+        public void Save()
         {
             var filter = I18NEngine.GetString("quest.constructor", "filedialog_filter_quiz_template");
             var sfd = new OpenFileDialog { Filter = filter };
@@ -118,7 +118,7 @@ namespace Quest.Controls.Presenter
                 SaveQuestionnaireToFile(sfd.FileName);
         }
 
-        public void btAddQuest_Click()
+        public void AddQuest()
         {
             var questTitle = I18NEngine.GetString("quest.core", "models_quest_title");
             QuestionnaireManipulator.AddNewQuest(questionnaire, questTitle);
@@ -126,12 +126,12 @@ namespace Quest.Controls.Presenter
             Build();
         }
 
-        public void btRun_Click(IWin32Window owner)
+        public void Run(IWin32Window owner)
         {
             RunQuestionnaire(owner);
         }
 
-        public void btExportCSV_Click(IWin32Window owner)
+        public void ExportCsv(IWin32Window owner)
         {
             var message = string.Empty;
             var ofd = new OpenFolderDialog();
