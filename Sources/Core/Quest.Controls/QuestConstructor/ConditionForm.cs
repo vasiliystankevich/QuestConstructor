@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using Quest.Controls.Presenter;
 using Quest.Core.Model;
-using Quest.Core.Services;
 using Quest.Core.UI;
 using Quest.Localizable;
 
@@ -9,36 +9,16 @@ namespace Quest.Controls.QuestConstructor
 {
     public partial class ConditionForm : Form, ILocalizableComponents
     {
-        public ConditionForm()
+        public ConditionForm(Questionnaire questionnaire, Condition condition)
         {
             InitializeComponent();
             LocalizableComponents();
-        }
-
-        public void Build(Questionnaire questionnaire, Condition condition)
-        {
-            this.questionnaire = questionnaire;
-            this.condition = condition;
-
-            tbExpression.Text = condition.Expression;
+            Presenter = new Presenter.ConditionForm(tbExpression, questionnaire, condition);
         }
 
         private void btOk_Click(object sender, EventArgs e)
         {
-            var expression = tbExpression.Text.Trim();
-
-            try
-            {
-                new ConditionCalculator().Check(questionnaire, expression);
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return;
-            }
-            condition.Expression = expression;
-            Changed();
-            DialogResult = DialogResult.OK;
+            DialogResult = Presenter.Ok();
         }
 
         public void LocalizableComponents()
@@ -49,9 +29,12 @@ namespace Quest.Controls.QuestConstructor
             btOk.Text = I18NEngine.GetString("quest.controls", "questconstructor_conditionform_btok_text");
         }
 
-        private Condition condition;
-        private Questionnaire questionnaire;
+        private IConditionForm Presenter { get; }
 
-        public event Action Changed = delegate { };
+        public event Action Changed
+        {
+            add => Presenter.Changed += value;
+            remove => Presenter.Changed -= value;
+        }
     }
 }

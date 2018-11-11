@@ -101,8 +101,7 @@ namespace Quest.Controls.QuestConstructor
             if (quest.Condition == null)
                 quest.Condition = new Condition();
 
-            var form = new ConditionForm();
-            form.Build(questionnaire, quest.Condition);
+            var form = new ConditionForm(questionnaire, quest.Condition);
             form.Changed += () => Changed();
             form.ShowDialog(this);
 

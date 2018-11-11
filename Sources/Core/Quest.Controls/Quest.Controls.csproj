@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Presenter\AlternativePanel.cs" />
+    <Compile Include="Presenter\ConditionForm.cs" />
     <Compile Include="Presenter\QuestConstructor.cs" />
     <Compile Include="Presenter\QuestInterview.cs" />
     <Compile Include="QuestConstructor\AlternativePanel.cs">

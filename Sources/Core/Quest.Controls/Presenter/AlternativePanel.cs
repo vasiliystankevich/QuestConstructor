@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using Quest.Controls.QuestConstructor;
 using Quest.Core.Model;
 using Quest.Core.Services;
 using Quest.Localizable;
@@ -80,8 +79,7 @@ namespace Quest.Controls.Presenter
             if (alt.Condition == null)
                 alt.Condition = new Condition();
 
-            var form = new ConditionForm();
-            form.Build(questionnaire, alt.Condition);
+            var form = new Controls.QuestConstructor.ConditionForm(questionnaire, alt.Condition);
             form.Changed += () => Changed();
             form.ShowDialog(owner);
 
