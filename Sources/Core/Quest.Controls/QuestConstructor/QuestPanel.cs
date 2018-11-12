@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Quest.Controls.Presenters;
 using Quest.Core.Model;
 using Quest.Core.Services;
 using Quest.Core.UI;
@@ -15,42 +16,9 @@ namespace Quest.Controls.QuestConstructor
             LocalizableComponents();
         }
 
-        /// <summary>
-        /// Строим интерфейс
-        /// </summary>
         public void Build(Questionnaire questionnaire, Core.Model.Quest quest)
         {
-            this.questionnaire = questionnaire;
-            this.quest = quest;
-
-            updating++;
-
-            var helper = new ControlHelper(this);
-
-            tbId.Text = quest.Id;
-            tbTitle.Text = quest.Title;
-            lbCondition.Text = quest.Condition?.ToString() ?? I18NEngine.GetString("quest.controls", "questconstructor_questpanel_lbcondition_text");
-
-            cbQuestType.DataSource = Enum.GetValues(typeof(QuestType));
-            cbQuestType.SelectedItem = quest.QuestType;
-
-            pnAlternatives.Controls.Clear();
-            foreach (var alt in quest)
-            {
-                var pn = new AlternativePanel();
-                pn.Build(questionnaire, quest, alt);
-                pn.AlternativeListChanged += () =>
-                {
-                    Build(questionnaire, quest); 
-                    Changed(); 
-                };
-                pn.Changed += () => Changed();
-                pnAlternatives.Controls.Add(pn);
-            }
-
-            helper.ResumeDrawing();
-
-            updating--;
+            presenter.Build(questionnaire, quest, this);
         }
 
         private void UpdateObject()
@@ -114,9 +82,7 @@ namespace Quest.Controls.QuestConstructor
             label3.Text = I18NEngine.GetString("quest.controls", "questconstructor_questpanel_label3_text");
         }
 
-        private Questionnaire questionnaire;
-        private Core.Model.Quest quest;
-        private int updating;
+        private IQuestPanel presenter { get; set; }
 
         public event Action QuestionnaireListChanged = delegate { };
         public event Action Changed = delegate { };
